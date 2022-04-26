@@ -1,3 +1,19 @@
+PLANNING:
+COMPONENTS:
+[]Header
+-Title
+-Clear All Button
+
+Add Item Section:
+Form
+-h2 "Add Meal/Food Item"
+-Item: Meal/add item
+-Item: Calories/add calories
+-Add meal submit button
+
+Footer or something:
+-Total calories: (pull this in from state)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
