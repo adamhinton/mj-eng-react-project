@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <AppBar id="header-styling">
       <h1>Calorie Counter</h1>
-      <Button variant="contained">Clear All</Button>
+      <Button id="header-button" variant="contained">
+        Clear All
+      </Button>
     </AppBar>
   );
 };
