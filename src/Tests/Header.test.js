@@ -13,5 +13,11 @@ test("[2] AppBar appears on screen", () => {
 });
 
 test("[3] Header h1 and Button appear on screen", () => {
-    const h1 = 
-})
+  render(<Header />);
+
+  const h1 = screen.getByTestId("header-h1");
+  const headerBtn = screen.getByTestId("header-btn");
+
+  expect(h1).toBeVisible();
+  expect(headerBtn).toBeVisible();
+});
