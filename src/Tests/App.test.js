@@ -6,3 +6,7 @@ test("Sanity Check", () => {
   expect(twoPlusTwo).toStrictEqual(4);
   expect(twoPlusTwo).not.toStrictEqual(5);
 });
+
+test("renders without errors", () => {
+  render(<App />);
+});
