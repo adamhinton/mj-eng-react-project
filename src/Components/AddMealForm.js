@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function AddMealForm() {
-  return <form>Blah Blah Blah</form>;
+  return <form className="add-meal-form">Blah Blah Blah</form>;
 }
