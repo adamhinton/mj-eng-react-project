@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+#header-styling {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#header-button {
+  font-size: 1.2rem;
+}
