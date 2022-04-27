@@ -1,12 +1,12 @@
 import App from "../App";
 import { render } from "@testing-library/react";
 
-test("Sanity Check", () => {
+test("[1] Sanity Check", () => {
   const twoPlusTwo = 2 + 2;
   expect(twoPlusTwo).toStrictEqual(4);
   expect(twoPlusTwo).not.toStrictEqual(5);
 });
 
-test("renders without errors", () => {
+test("[2] renders without errors", () => {
   render(<App />);
 });
