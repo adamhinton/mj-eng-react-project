@@ -1,4 +1,6 @@
 import SingleMeal from "./SingleMeal";
+import ThingsContext from "../Context/MyContext";
+import { useContext } from "react";
 
 const dummyArray = [
   {
@@ -12,6 +14,10 @@ const dummyArray = [
 ];
 
 const MealDisplayContainer = () => {
+  const things = useContext(ThingsContext);
+
+  console.log("things:", things);
+
   return (
     <ul>
       {dummyArray.map((item) => {
