@@ -1,5 +1,5 @@
 const MealDisplayContainer = () => {
-  return <div>fjdiaosfsdajio</div>;
+  return <section>fjdiaosfsdajio</section>;
 };
 
 export default MealDisplayContainer;
