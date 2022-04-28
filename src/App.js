@@ -4,15 +4,12 @@ import AddMealForm from "./Components/AddMealForm";
 import TotalCalories from "./Components/TotalCalories";
 import MealDisplayContainer from "./Components/MealDisplayContainer";
 import { ThingsProvider } from "./Context/MyContext";
-
-const things = {
-  mealInfo: [
-    { mealName: "Dummy data", count: 1234 },
-    { mealName: "More dummy data", count: 324325 },
-  ],
-};
+import ThingsContext from "./Context/MyContext";
+import { useContext } from "react";
 
 function App() {
+  const things = useContext(ThingsContext);
+
   return (
     <div className="App">
       <ThingsProvider value={things}>
