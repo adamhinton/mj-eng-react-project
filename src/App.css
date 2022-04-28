@@ -53,3 +53,7 @@ h3 {
   font-size: 2.92rem;
   margin-top: 2%;
 }
+
+li {
+  list-style-type: none;
+}
