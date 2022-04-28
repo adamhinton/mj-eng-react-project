@@ -14,3 +14,11 @@ test("[2] Display correct meal name and calorie count", () => {
   expect(mealNameText).toBeVisible();
   expect(mealCountText).toBeVisible();
 });
+
+test("[3] Displays meal edit icon", () => {
+  render(<SingleMeal />);
+
+  const mealEditBtn = screen.getByTestId("meal-edit-button");
+
+  expect(mealEditBtn).toBeVisible();
+});
