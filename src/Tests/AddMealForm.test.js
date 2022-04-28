@@ -14,3 +14,13 @@ test("[2] Meal input and label appear on screen", () => {
   expect(mealLabel).toBeVisible();
   expect(mealInput).toBeVisible();
 });
+
+test("[3] Calories input and label appear on screen", () => {
+  render(<AddMealForm />);
+
+  const caloriesLabel = screen.getByTestId("calories-label");
+  const caloriesInput = screen.getByTestId("calories-input");
+
+  expect(caloriesLabel).toBeVisible();
+  expect(caloriesInput).toBeVisible();
+});
