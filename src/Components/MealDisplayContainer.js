@@ -20,7 +20,7 @@ const MealDisplayContainer = () => {
 
   return (
     <ul>
-      {dummyArray.map((item) => {
+      {things.mealInfo.map((item) => {
         const { mealName, count } = item;
         return <SingleMeal mealName={mealName} count={count} key={mealName} />;
       })}
