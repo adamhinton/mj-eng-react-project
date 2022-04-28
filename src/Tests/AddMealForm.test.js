@@ -24,3 +24,10 @@ test("[3] Calories input and label appear on screen", () => {
   expect(caloriesLabel).toBeVisible();
   expect(caloriesInput).toBeVisible();
 });
+
+test("[4] Submit button appears in document", () => {
+  render(<AddMealForm />);
+
+  const submitBtn = screen.getByTestId("submit-btn");
+  expect(submitBtn).toBeVisible();
+});
