@@ -24,7 +24,9 @@ export default function AddMealForm() {
           </div>
         </section>
       </Paper>
-      <Button variant="contained">Add Meal</Button>
+      <Button id="submit-button" variant="contained">
+        Add Meal
+      </Button>
     </form>
   );
 }

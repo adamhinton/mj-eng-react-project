@@ -37,3 +37,8 @@ main {
   flex-direction: column;
   width: 45%;
 }
+
+#submit-button {
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
