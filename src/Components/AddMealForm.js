@@ -11,7 +11,14 @@ export default function AddMealForm() {
       <Paper id="add-meal-form">
         <h2>Add Meal / Food Item</h2>
 
-        <FormLabel>Meal</FormLabel>
+        <div>
+          <FormLabel>Meal</FormLabel>
+          <TextField
+            // onChange={onTextChange}
+            value="Add Item"
+            // label={"Text Value"} //optional
+          />
+        </div>
       </Paper>
     </form>
   );
