@@ -11,23 +11,17 @@ export default function AddMealForm() {
       <Paper id="add-meal-form">
         <h2>Add Meal / Food Item</h2>
 
-        <div className="form-item-container">
-          <FormLabel>Meal</FormLabel>
-          <TextField
-            // onChange={onTextChange}
-            placeholder="Add Item"
-            // label={"Text Value"} //optional
-          />
-        </div>
+        <section className="all-form-items">
+          <div className="form-item-container">
+            <FormLabel>Meal</FormLabel>
+            <TextField placeholder="Add Item" />
+          </div>
 
-        <div className="form-item-container">
-          <FormLabel>Calories</FormLabel>
-          <TextField
-            // onChange={onTextChange}
-            placeholder="Add Calories"
-            // label={"Text Value"} //optional
-          />
-        </div>
+          <div className="form-item-container">
+            <FormLabel>Calories</FormLabel>
+            <TextField placeholder="Add Calories" />
+          </div>
+        </section>
       </Paper>
     </form>
   );
