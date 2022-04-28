@@ -2,8 +2,9 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 // import React, { useState } from "react";
-import { Button, Paper } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import FormLabel from "@material-ui/core/FormLabel";
+import { Button } from "@mui/material";
 
 export default function AddMealForm() {
   return (
@@ -23,6 +24,7 @@ export default function AddMealForm() {
           </div>
         </section>
       </Paper>
+      <Button variant="contained">Add Meal</Button>
     </form>
   );
 }
