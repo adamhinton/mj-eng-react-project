@@ -5,8 +5,14 @@ const SingleMeal = (props) => {
 
   return (
     <li>
-      <strong>{name}:</strong>
-      <em> {count} Calories</em>
+      <div>
+        <strong>{name}:</strong>
+        <em> {count} Calories</em>
+      </div>
+
+      <div>
+        <EditIcon />
+      </div>
     </li>
   );
 };
