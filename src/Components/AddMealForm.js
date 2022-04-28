@@ -15,7 +15,7 @@ export default function AddMealForm() {
           <FormLabel>Meal</FormLabel>
           <TextField
             // onChange={onTextChange}
-            value="Add Item"
+            placeholder="Add Item"
             // label={"Text Value"} //optional
           />
         </div>
@@ -24,7 +24,7 @@ export default function AddMealForm() {
           <FormLabel>Calories</FormLabel>
           <TextField
             // onChange={onTextChange}
-            value="Add Calories"
+            placeholder="Add Calories"
             // label={"Text Value"} //optional
           />
         </div>
