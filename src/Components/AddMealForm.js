@@ -10,6 +10,8 @@ export default function AddMealForm() {
     <form>
       <Paper id="add-meal-form">
         <h2>Add Meal / Food Item</h2>
+
+        <FormLabel>Meal</FormLabel>
       </Paper>
     </form>
   );
