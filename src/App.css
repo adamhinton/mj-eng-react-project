@@ -66,3 +66,8 @@ li {
   display: flex;
   justify-content: space-between;
 }
+
+.meal-edit-button {
+  background: none;
+  border: none;
+}

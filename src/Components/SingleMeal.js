@@ -11,7 +11,9 @@ const SingleMeal = (props) => {
       </div>
 
       <div>
-        <EditIcon />
+        <button className="meal-edit-button">
+          <EditIcon />
+        </button>
       </div>
     </li>
   );
