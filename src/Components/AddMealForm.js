@@ -19,6 +19,15 @@ export default function AddMealForm() {
             // label={"Text Value"} //optional
           />
         </div>
+
+        <div className="form-item-container">
+          <FormLabel>Calories</FormLabel>
+          <TextField
+            // onChange={onTextChange}
+            value="Add Calories"
+            // label={"Text Value"} //optional
+          />
+        </div>
       </Paper>
     </form>
   );
