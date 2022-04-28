@@ -16,7 +16,7 @@ const MealDisplayContainer = () => {
     <ul>
       {dummyArray.map((item) => {
         const { name, count } = item;
-        return <SingleMeal name={name} item={item} />;
+        return <SingleMeal name={name} count={count} />;
       })}
     </ul>
   );
