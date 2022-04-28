@@ -16,7 +16,7 @@ const dummyArray = [
 const MealDisplayContainer = () => {
   const things = useContext(ThingsContext);
 
-  console.log("things:", things);
+  console.log("things.mealInfo:", things.mealInfo);
 
   return (
     <ul>
