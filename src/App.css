@@ -56,4 +56,6 @@ h3 {
 
 li {
   list-style-type: none;
+  border: 1px solid black;
+  padding: 0.75%;
 }
