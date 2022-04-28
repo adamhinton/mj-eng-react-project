@@ -1,5 +1,5 @@
 const SingleMeal = () => {
-  return <div>fdjaiofsdjifo</div>;
+  return <li>fdjaiofsdjifo</li>;
 };
 
 export default SingleMeal;
