@@ -1,5 +1,9 @@
 import React from "react";
 
-const MyContext = React.createContext();
+const ThingsContext = React.createContext({
+  count: 12345,
+  example: "example, yay!",
+});
+export const ThingsContextProvider = ThingsContext.Provider;
 
-export default MyContext;
+export default ThingsContext;
