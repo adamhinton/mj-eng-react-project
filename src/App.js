@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./Components/Header";
 import AddMealForm from "./Components/AddMealForm";
+import TotalCalories from "./Components/TotalCalories";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <main>
         <AddMealForm />
+        <TotalCalories />
       </main>
     </div>
   );
