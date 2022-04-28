@@ -5,7 +5,10 @@ import TotalCalories from "./Components/TotalCalories";
 import MealDisplayContainer from "./Components/MealDisplayContainer";
 import { ThingsProvider } from "./Context/MyContext";
 
-const things = [{ name: "Dummy data" }, { name: "More dummy data" }];
+const things = [
+  { mealName: "Dummy data", count: 1234 },
+  { mealName: "More dummy data", count: 324325 },
+];
 
 function App() {
   return (
