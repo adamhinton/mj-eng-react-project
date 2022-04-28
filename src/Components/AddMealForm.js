@@ -1,9 +1,8 @@
 import React from "react";
+import { FormGroup } from "@mui/material";
 
 export default function AddMealForm() {
   return (
-    <form className="add-meal-form">
-      <legend>Add Meal/Food Item</legend>
-    </form>
+
   );
 }
