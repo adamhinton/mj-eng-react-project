@@ -11,7 +11,7 @@ const SingleMeal = (props) => {
       </div>
 
       <div>
-        <button className="meal-edit-button">
+        <button className="meal-edit-button" data-testid="meal-edit-button">
           <EditIcon />
         </button>
       </div>
