@@ -3,6 +3,7 @@ import Header from "./Components/Header";
 import AddMealForm from "./Components/AddMealForm";
 import TotalCalories from "./Components/TotalCalories";
 import MealDisplayContainer from "./Components/MealDisplayContainer";
+import ThingsProvider
 
 function App() {
   return (
