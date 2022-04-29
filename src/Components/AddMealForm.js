@@ -13,7 +13,7 @@ export default function AddMealForm() {
   const { myThings, setMyThings } = useContext(ThingsContext);
   console.log("myThings:", myThings);
 
-  const [formValues, setFormValues] = useState({ name: "", count: 0 });
+  const [formValues, setFormValues] = useState({ name: "", calories: 0 });
 
   return (
     <form>
@@ -45,19 +45,19 @@ export default function AddMealForm() {
           </div>
 
           <div className="form-item-container">
-            <FormLabel data-testid="calories-label" htmlFor="calorie-count">
+            <FormLabel data-testid="calories-label" htmlFor="calorie-calories">
               Calories
             </FormLabel>
             <TextField
               data-testid="calories-input"
               placeholder="Add Calories"
               type="number"
-              name="calorie-count"
-              value={formValues.count}
+              name="calorie-calories"
+              value={formValues.calories}
               onChange={(e) => {
                 setFormValues({
                   ...formValues,
-                  count: e.target.value,
+                  calories: e.target.value,
                 });
               }}
             />
@@ -82,7 +82,7 @@ export default function AddMealForm() {
           // e.preventDefault();
           // StorageCtrl.StorageCtrl.storeItem();
           // // console.log("addItem:", ItemCtrl.addItem);
-          // ItemCtrl.addItem(formValues.name, formValues.count);
+          // ItemCtrl.addItem(formValues.name, formValues.calories);
           // setMyThings([...myThings, formValues]);
           console.log("items in storage:", StorageCtrl.getItemsFromStorage());
         }}

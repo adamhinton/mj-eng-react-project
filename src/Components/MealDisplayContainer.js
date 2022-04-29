@@ -8,8 +8,8 @@ const MealDisplayContainer = () => {
   return (
     <ul>
       {myThings.map((item) => {
-        const { name, count } = item;
-        return <SingleMeal name={name} count={count} key={name} />;
+        const { name, calories } = item;
+        return <SingleMeal name={name} calories={calories} key={name} />;
       })}
       fjdaiofadsifo
     </ul>
