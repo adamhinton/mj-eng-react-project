@@ -37,7 +37,6 @@ export default function AddMealForm() {
                   ...formValues,
                   mealName: e.target.value,
                 });
-                console.log("formValues:", formValues);
               }}
             />
           </div>
@@ -57,7 +56,6 @@ export default function AddMealForm() {
                   ...formValues,
                   count: e.target.value,
                 });
-                console.log("formValues:", formValues);
               }}
             />
           </div>
