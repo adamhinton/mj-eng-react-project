@@ -72,6 +72,7 @@ export default function AddMealForm() {
             ...myThings,
             mealInfo: [...myThings.mealInfo, formValues],
           });
+          setFormValues({ mealName: "", count: 0 });
         }}
       >
         Add Meal
