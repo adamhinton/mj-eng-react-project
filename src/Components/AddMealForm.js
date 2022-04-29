@@ -4,12 +4,24 @@ import { Paper } from "@material-ui/core";
 import FormLabel from "@material-ui/core/FormLabel";
 import { Button } from "@mui/material";
 import { useState } from "react";
+import { useContext } from "react";
+import ThingsContext from "../Context/MyContext";
 
 export default function AddMealForm() {
+  const { myThings, setMyThings } = useContext(ThingsContext);
+
   const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
 
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        setMyThings({
+          ...myThings,
+          formValues,
+        });
+      }}
+    >
       <Paper id="add-meal-form">
         <h2 data-testid="form-h2">Add Meal / Food Item</h2>
 
@@ -28,6 +40,13 @@ export default function AddMealForm() {
               type="text"
               name="meal-name"
               value={formValues.mealName}
+              onChange={(e) => {
+                setFormValues({
+                  ...formValues,
+                  mealName: e.target.value,
+                });
+                console.log("formValues:", formValues);
+              }}
             />
           </div>
 
@@ -41,13 +60,32 @@ export default function AddMealForm() {
               type="number"
               name="calorie-count"
               value={formValues.count}
+              onChange={(e) => {
+                setFormValues({
+                  ...formValues,
+                  count: e.target.value,
+                });
+                console.log("formValues:", formValues);
+              }}
             />
           </div>
         </section>
       </Paper>
-      <Button id="submit-button" data-testid="submit-btn" variant="contained">
-        Add Meal
-      </Button>
+      <input
+        id="submit-button"
+        data-testid="submit-btn"
+        variant="contained"
+        type="submit"
+        onClick={(e) => {
+          e.preventDefault();
+          setMyThings({
+            ...myThings,
+            mealInfo: [...myThings.mealInfo, formValues],
+          });
+          console.log("submitting");
+          console.log("myThings:", myThings);
+        }}
+      ></input>
     </form>
   );
 }
