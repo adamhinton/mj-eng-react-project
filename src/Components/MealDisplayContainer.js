@@ -3,7 +3,7 @@ import ThingsContext from "../Context/MyContext";
 import { useContext } from "react";
 
 const MealDisplayContainer = () => {
-  const { myThings, setMyThings } = useContext(ThingsContext);
+  const { myThings } = useContext(ThingsContext);
 
   return (
     <ul>
