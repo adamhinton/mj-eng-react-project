@@ -6,11 +6,13 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
+import StorageCtrl from "../CrudFunctions/StorageCtrl";
+import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 export default function AddMealForm() {
   const { myThings, setMyThings } = useContext(ThingsContext);
 
-  const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
+  const [formValues, setFormValues] = useState({ name: "", calories: 0 });
 
   return (
     <form>
@@ -31,30 +33,30 @@ export default function AddMealForm() {
               placeholder="Add Item"
               type="text"
               name="meal-name"
-              value={formValues.mealName}
+              value={formValues.name}
               onChange={(e) => {
                 setFormValues({
                   ...formValues,
-                  mealName: e.target.value,
+                  name: e.target.value,
                 });
               }}
             />
           </div>
 
           <div className="form-item-container">
-            <FormLabel data-testid="calories-label" htmlFor="calorie-count">
+            <FormLabel data-testid="calories-label" htmlFor="calorie-calories">
               Calories
             </FormLabel>
             <TextField
               data-testid="calories-input"
               placeholder="Add Calories"
               type="number"
-              name="calorie-count"
-              value={formValues.count}
+              name="calorie-calories"
+              value={formValues.calories}
               onChange={(e) => {
                 setFormValues({
                   ...formValues,
-                  count: e.target.value,
+                  calories: e.target.value,
                 });
               }}
             />
@@ -68,11 +70,13 @@ export default function AddMealForm() {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          setMyThings({
-            ...myThings,
-            mealInfo: [...myThings.mealInfo, formValues],
-          });
-          setFormValues({ mealName: "", count: 0 });
+          const input = formValues;
+          const newItem = ItemCtrl.addItem(input.name, input.calories);
+
+          if (input.name !== "" && input.calories !== "") {
+            StorageCtrl.storeItem(newItem);
+          }
+          setMyThings(StorageCtrl.getItemsFromStorage());
         }}
       >
         Add Meal
