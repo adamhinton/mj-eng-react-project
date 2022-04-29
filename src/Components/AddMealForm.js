@@ -71,17 +71,20 @@ export default function AddMealForm() {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          // setMyThings({
-          //   ...myThings,
-          //   mealInfo: [...myThings.mealInfo, formValues],
-          // });
-          // setFormValues({ name: "", count: 0 });
-          // StorageCtrl.storeItem(formValues);
-          console.log("formValues:", formValues);
-          // ItemCtrl.addItem(formValues.name, Number(formValues.count));
-          // console.log("Storage:", StorageCtrl.getItemsFromStorage());
-          console.log("addItem:", ItemCtrl.addItem);
-          setMyThings([...myThings, formValues]);
+          const input = formValues;
+          const newItem = ItemCtrl.addItem(input.name, input.calories);
+
+          if (input.name !== "" && input.calories !== "") {
+            StorageCtrl.storeItem(newItem);
+          }
+
+          setMyThings(StorageCtrl.getItemsFromStorage());
+          // e.preventDefault();
+          // StorageCtrl.StorageCtrl.storeItem();
+          // // console.log("addItem:", ItemCtrl.addItem);
+          // ItemCtrl.addItem(formValues.name, formValues.count);
+          // setMyThings([...myThings, formValues]);
+          console.log("items in storage:", StorageCtrl.getItemsFromStorage());
         }}
       >
         Add Meal
