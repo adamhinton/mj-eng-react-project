@@ -1,10 +1,9 @@
 import SingleMeal from "./SingleMeal";
 import ThingsContext from "../Context/MyContext";
 import { useContext } from "react";
-import { useEffect } from "react";
 
 const MealDisplayContainer = () => {
-  const { myThings, setMyThings } = useContext(ThingsContext);
+  const { myThings } = useContext(ThingsContext);
 
   return (
     <ul>
