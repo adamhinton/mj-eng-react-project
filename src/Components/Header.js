@@ -1,5 +1,7 @@
 import { AppBar } from "@mui/material";
 import { Button } from "@mui/material";
+import ItemCtrl from "../CrudFunctions/ItemCtrl";
+import StorageCtrl from "../CrudFunctions/StorageCtrl";
 
 const Header = () => {
   return (
@@ -13,3 +15,5 @@ const Header = () => {
 };
 
 export default Header;
+
+const clearAllItemsClick = () => {};
