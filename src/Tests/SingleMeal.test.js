@@ -1,15 +1,20 @@
 import SingleMeal from "../Components/SingleMeal";
 import { render, screen } from "@testing-library/react";
 
+const testMeal = {
+  name: "Meal One",
+  calories: 12345,
+};
+
 test("[1] Renders without errors", () => {
   render(<SingleMeal />);
 });
 
 test("[2] Display correct meal name and calorie count", () => {
-  render(<SingleMeal mealName="Meal One" count={300} />);
+  render(<SingleMeal name={testMeal.name} calories={testMeal.calories} />);
 
   const mealNameText = screen.getByText(/meal one/i);
-  const mealCountText = screen.getByText(/300/);
+  const mealCountText = screen.getByText(/12345/);
 
   expect(mealNameText).toBeVisible();
   expect(mealCountText).toBeVisible();
