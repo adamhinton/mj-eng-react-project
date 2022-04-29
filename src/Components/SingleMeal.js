@@ -1,12 +1,12 @@
 import EditIcon from "@mui/icons-material/Edit";
 
 const SingleMeal = (props) => {
-  const { mealName, count } = props;
+  const { name, count } = props;
 
   return (
     <li>
       <div>
-        <strong>{mealName}:</strong>
+        <strong>{name}:</strong>
         <em> {count} Calories</em>
       </div>
 

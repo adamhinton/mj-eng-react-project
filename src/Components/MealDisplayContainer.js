@@ -3,14 +3,14 @@ import ThingsContext from "../Context/MyContext";
 import { useContext } from "react";
 
 const MealDisplayContainer = () => {
-  const { myThings } = useContext(ThingsContext);
+  const { myThings, setMyThings } = useContext(ThingsContext);
 
   return (
     <ul>
-      {/* {myThings.mealInfo.map((item) => {
-        const { mealName, count } = item;
-        return <SingleMeal mealName={mealName} count={count} key={mealName} />;
-      })} */}
+      {myThings.map((item) => {
+        const { name, count } = item;
+        return <SingleMeal name={name} count={count} key={name} />;
+      })}
       fjdaiofadsifo
     </ul>
   );
