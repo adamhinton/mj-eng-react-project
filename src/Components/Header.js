@@ -30,6 +30,5 @@ export default Header;
 const clearAllItemsClick = (setMyThings) => {
   ItemCtrl.clearAllItems();
   StorageCtrl.clearItemsFromStorage();
-  console.log("clearing");
   setMyThings([]);
 };
