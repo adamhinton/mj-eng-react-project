@@ -13,15 +13,7 @@ export default function AddMealForm() {
   const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setMyThings({
-          ...myThings,
-          formValues,
-        });
-      }}
-    >
+    <form>
       <Paper id="add-meal-form">
         <h2 data-testid="form-h2">Add Meal / Food Item</h2>
 
