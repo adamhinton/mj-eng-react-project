@@ -74,8 +74,6 @@ export default function AddMealForm() {
             ...myThings,
             mealInfo: [...myThings.mealInfo, formValues],
           });
-          console.log("submitting");
-          console.log("myThings:", myThings);
         }}
       >
         Add Meal
