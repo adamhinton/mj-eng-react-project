@@ -6,7 +6,7 @@ import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
 
 const Header = () => {
-  const { myThings, setMyThings } = useContext(ThingsContext);
+  const { setMyThings } = useContext(ThingsContext);
 
   return (
     <AppBar id="header-styling" data-testid="appBar">
