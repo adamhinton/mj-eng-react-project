@@ -1,15 +1,14 @@
 import SingleMeal from "./SingleMeal";
 import ThingsContext from "../Context/MyContext";
 import { useContext } from "react";
+import { useEffect } from "react";
 
 const MealDisplayContainer = () => {
-  const things = useContext(ThingsContext);
-
-  // console.log("things.mealInfo:", things.mealInfo);
+  const { myThings, setMyThings } = useContext(ThingsContext);
 
   return (
     <ul>
-      {things.mealInfo.map((item) => {
+      {myThings.mealInfo.map((item) => {
         const { mealName, count } = item;
         return <SingleMeal mealName={mealName} count={count} key={mealName} />;
       })}
