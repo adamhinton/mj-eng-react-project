@@ -37,6 +37,7 @@ export default function AddMealForm() {
                   ...formValues,
                   mealName: e.target.value,
                 });
+                console.log("e.target:", e.target);
               }}
             />
           </div>
