@@ -6,12 +6,14 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
+import StorageCtrl from "../CrudFunctions/StorageCtrl";
+import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 export default function AddMealForm() {
   const { myThings, setMyThings } = useContext(ThingsContext);
   console.log("myThings:", myThings);
 
-  const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
+  const [formValues, setFormValues] = useState({ name: "", count: 0 });
 
   return (
     <form>
@@ -32,11 +34,11 @@ export default function AddMealForm() {
               placeholder="Add Item"
               type="text"
               name="meal-name"
-              value={formValues.mealName}
+              value={formValues.name}
               onChange={(e) => {
                 setFormValues({
                   ...formValues,
-                  mealName: e.target.value,
+                  name: e.target.value,
                 });
               }}
             />
@@ -69,11 +71,17 @@ export default function AddMealForm() {
         type="submit"
         onClick={(e) => {
           e.preventDefault();
-          setMyThings({
-            ...myThings,
-            mealInfo: [...myThings.mealInfo, formValues],
-          });
-          setFormValues({ mealName: "", count: 0 });
+          // setMyThings({
+          //   ...myThings,
+          //   mealInfo: [...myThings.mealInfo, formValues],
+          // });
+          // setFormValues({ name: "", count: 0 });
+          // StorageCtrl.storeItem(formValues);
+          console.log("formValues:", formValues);
+          // ItemCtrl.addItem(formValues.name, Number(formValues.count));
+          // console.log("Storage:", StorageCtrl.getItemsFromStorage());
+          console.log("addItem:", ItemCtrl.addItem);
+          setMyThings([...myThings, formValues]);
         }}
       >
         Add Meal
