@@ -3,8 +3,12 @@ import TextField from "@material-ui/core/TextField";
 import { Paper } from "@material-ui/core";
 import FormLabel from "@material-ui/core/FormLabel";
 import { Button } from "@mui/material";
+import { useState } from "react";
+import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
 
 export default function AddMealForm() {
+  const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
+
   return (
     <form>
       <Paper id="add-meal-form">
@@ -12,15 +16,30 @@ export default function AddMealForm() {
 
         <section className="all-form-items">
           <div className="form-item-container">
-            <FormLabel data-testid="meal-label">Meal</FormLabel>
-            <TextField data-testid="meal-input" placeholder="Add Item" />
+            <FormLabel
+              data-testid="meal-label"
+              htmlFor="meal-name"
+              name="meal-name"
+            >
+              Meal
+            </FormLabel>
+            <TextField
+              data-testid="meal-input"
+              placeholder="Add Item"
+              type="text"
+              name="meal-name"
+            />
           </div>
 
           <div className="form-item-container">
-            <FormLabel data-testid="calories-label">Calories</FormLabel>
+            <FormLabel data-testid="calories-label" htmlFor="calorie-count">
+              Calories
+            </FormLabel>
             <TextField
               data-testid="calories-input"
               placeholder="Add Calories"
+              type="number"
+              name="calorie-count"
             />
           </div>
         </section>
