@@ -9,6 +9,7 @@ import ThingsContext from "../Context/MyContext";
 
 export default function AddMealForm() {
   const { myThings, setMyThings } = useContext(ThingsContext);
+  console.log("myThings:", myThings);
 
   const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
 
