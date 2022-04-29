@@ -71,7 +71,7 @@ export default function AddMealForm() {
           </div>
         </section>
       </Paper>
-      <input
+      <Button
         id="submit-button"
         data-testid="submit-btn"
         variant="contained"
@@ -85,7 +85,9 @@ export default function AddMealForm() {
           console.log("submitting");
           console.log("myThings:", myThings);
         }}
-      ></input>
+      >
+        Add Meal
+      </Button>
     </form>
   );
 }
