@@ -1,22 +1,15 @@
 import SingleMeal from "./SingleMeal";
-
-const dummyArray = [
-  {
-    mealName: "Meal One",
-    count: 23112,
-  },
-  {
-    mealName: "Meal Two",
-    count: 223423,
-  },
-];
+import ThingsContext from "../Context/MyContext";
+import { useContext } from "react";
 
 const MealDisplayContainer = () => {
+  const { myThings } = useContext(ThingsContext);
+
   return (
     <ul>
-      {dummyArray.map((item) => {
+      {myThings.mealInfo.map((item) => {
         const { mealName, count } = item;
-        return <SingleMeal mealName={mealName} count={count} />;
+        return <SingleMeal mealName={mealName} count={count} key={mealName} />;
       })}
     </ul>
   );
