@@ -1,3 +1,5 @@
+import StorageCtrl from "./StorageCtrl";
+
 const ItemCtrl = (function () {
   // Item Constructor
   const Item = function (id, name, calories) {
@@ -31,7 +33,8 @@ const ItemCtrl = (function () {
       calories = parseInt(calories);
 
       // Create new item
-      newItem = new Item(ID, name, calories);
+      //added a Let before this line (AD)
+      let newItem = new Item(ID, name, calories);
 
       // Add to items array
       data.items.push(newItem);
