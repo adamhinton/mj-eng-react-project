@@ -4,7 +4,6 @@ import { Paper } from "@material-ui/core";
 import FormLabel from "@material-ui/core/FormLabel";
 import { Button } from "@mui/material";
 import { useState } from "react";
-import { toHaveFormValues } from "@testing-library/jest-dom/dist/matchers";
 
 export default function AddMealForm() {
   const [formValues, setFormValues] = useState({ mealName: "", count: 0 });
@@ -28,6 +27,7 @@ export default function AddMealForm() {
               placeholder="Add Item"
               type="text"
               name="meal-name"
+              value={formValues.mealName}
             />
           </div>
 
@@ -40,6 +40,7 @@ export default function AddMealForm() {
               placeholder="Add Calories"
               type="number"
               name="calorie-count"
+              value={formValues.count}
             />
           </div>
         </section>
