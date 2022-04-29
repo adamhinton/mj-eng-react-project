@@ -11,7 +11,6 @@ import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 export default function AddMealForm() {
   const { myThings, setMyThings } = useContext(ThingsContext);
-  console.log("myThings:", myThings);
 
   const [formValues, setFormValues] = useState({ name: "", calories: 0 });
 
@@ -77,14 +76,7 @@ export default function AddMealForm() {
           if (input.name !== "" && input.calories !== "") {
             StorageCtrl.storeItem(newItem);
           }
-
           setMyThings(StorageCtrl.getItemsFromStorage());
-          // e.preventDefault();
-          // StorageCtrl.StorageCtrl.storeItem();
-          // // console.log("addItem:", ItemCtrl.addItem);
-          // ItemCtrl.addItem(formValues.name, formValues.calories);
-          // setMyThings([...myThings, formValues]);
-          console.log("items in storage:", StorageCtrl.getItemsFromStorage());
         }}
       >
         Add Meal
