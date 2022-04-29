@@ -11,7 +11,6 @@ const MealDisplayContainer = () => {
         const { name, calories } = item;
         return <SingleMeal name={name} calories={calories} key={name} />;
       })}
-      fjdaiofadsifo
     </ul>
   );
 };
