@@ -1,19 +1,32 @@
 import Header from "../Components/Header";
 import { render, screen } from "@testing-library/react";
+import { ThingsProvider } from "../Context/MyContext";
 
 test.skip("[1] Renders without errors", () => {
-  render(<Header />);
+  render(
+    <ThingsProvider>
+      <Header />
+    </ThingsProvider>
+  );
 });
 
 test.skip("[2] AppBar appears on screen", () => {
-  render(<Header />);
+  render(
+    <ThingsProvider>
+      <Header />
+    </ThingsProvider>
+  );
 
   const appBar = screen.getByTestId("appBar");
   expect(appBar).toBeVisible();
 });
 
 test.skip("[3] Header h1 and Button appear on screen", () => {
-  render(<Header />);
+  render(
+    <ThingsProvider>
+      <Header />
+    </ThingsProvider>
+  );
 
   const h1 = screen.getByTestId("header-h1");
   const headerBtn = screen.getByTestId("header-btn");
