@@ -3,25 +3,19 @@ import Header from "./Components/Header";
 import AddMealForm from "./Components/AddMealForm";
 import TotalCalories from "./Components/TotalCalories";
 import MealDisplayContainer from "./Components/MealDisplayContainer";
-import ThingsContext from "./Context/MyContext";
-import { useState } from "react";
-import StorageCtrl from "./CrudFunctions/StorageCtrl";
-
-const things = StorageCtrl.getItemsFromStorage();
+import { ThingsProvider } from "./Context/MyContext";
 
 function App() {
-  const [myThings, setMyThings] = useState(things);
-
   return (
     <div className="App">
-      <ThingsContext.Provider value={{ myThings, setMyThings }}>
+      <ThingsProvider>
         <Header />
         <main>
           <AddMealForm />
           <TotalCalories />
           <MealDisplayContainer />
         </main>
-      </ThingsContext.Provider>
+      </ThingsProvider>
     </div>
   );
 }
