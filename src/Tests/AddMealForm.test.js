@@ -59,11 +59,16 @@ test("[5] Form values accept valid typed values, and reset on submit", () => {
     </ThingsProvider>
   );
 
-  // console.log("abc:", screen.getByPlaceholderText("Add Item"));
-
   userEvent.type(screen.getByPlaceholderText("Add Item"), "abc");
   userEvent.type(screen.getByPlaceholderText("Add Calories"), "123");
 
   expect(screen.getByPlaceholderText("Add Item")).toHaveValue("abc");
   expect(screen.getByPlaceholderText("Add Calories")).toHaveValue(123);
+
+  const submitBtn = screen.getByTestId("submit-btn");
+
+  userEvent.click(submitBtn);
+
+  expect(screen.getByPlaceholderText("Add Item")).toHaveValue("");
+  expect(screen.getByPlaceholderText("Add Calories")).toHaveValue(0);
 });
