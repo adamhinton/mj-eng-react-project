@@ -40,6 +40,7 @@ const SingleMeal = (props) => {
         >
           <DeleteIcon />
         </Button>
+        <button>Click me!</button>
       </div>
     </li>
   );
