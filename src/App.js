@@ -6,22 +6,23 @@ import MealDisplayContainer from "./Components/MealDisplayContainer";
 import ThingsContext from "./Context/MyContext";
 import { useState } from "react";
 import StorageCtrl from "./CrudFunctions/StorageCtrl";
+import { ThingsProvider } from "./Context/MyContext";
 
 const things = StorageCtrl.getItemsFromStorage();
 
 function App() {
-  const [myThings, setMyThings] = useState(things);
+  // const [myThings, setMyThings] = useState(things);
 
   return (
     <div className="App">
-      <ThingsContext.Provider value={{ myThings, setMyThings }}>
+      <ThingsProvider>
         <Header />
         <main>
           <AddMealForm />
           <TotalCalories />
           <MealDisplayContainer />
         </main>
-      </ThingsContext.Provider>
+      </ThingsProvider>
     </div>
   );
 }
