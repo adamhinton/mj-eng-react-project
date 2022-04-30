@@ -1,5 +1,6 @@
 import SingleMeal from "../Components/SingleMeal";
 import { render, screen } from "@testing-library/react";
+import { ThingsProvider } from "../Context/MyContext";
 
 const testMeal = {
   name: "Meal One",
