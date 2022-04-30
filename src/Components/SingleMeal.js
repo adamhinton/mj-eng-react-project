@@ -6,17 +6,20 @@ import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 //PLAN for edit single meal:
+
+//FUNCTIONALITY:
 //Write functionality to edit SM
 //take from template
+//confirm it works first with dummy data
 
+//UI:
 //Set isEditing, setIsEditing to state
-//if false, do nothing
+//if false, display component as usual
 //if true, show form fields and submit btn in SM.js to edit
-//Maybe make new component
+//Maybe make new component just for the form and nest it
 
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
-
   const { name, calories, id } = props;
 
   return (
@@ -46,7 +49,6 @@ export default SingleMeal;
 
 const deleteSingleItemClick = (id, setMyThings) => {
   StorageCtrl.deleteItemFromStorage(id);
-
   const newContext = StorageCtrl.getItemsFromStorage();
   setMyThings(newContext);
 };
