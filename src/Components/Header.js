@@ -14,7 +14,7 @@ const Header = () => {
       <Button
         id="header-button"
         variant="contained"
-        data-testid="header-btn"
+        data-testid="clear-all-btn"
         onClick={() => {
           clearAllItemsClick(setMyThings);
         }}
