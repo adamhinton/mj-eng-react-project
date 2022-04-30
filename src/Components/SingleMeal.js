@@ -5,6 +5,15 @@ import ThingsContext from "../Context/MyContext";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+//PLAN for edit single meal:
+//Write functionality to edit SM
+//take from template
+
+//Set isEditing, setIsEditing to state
+//if false, do nothing
+//if true, show form fields and submit btn in SM.js to edit
+//Maybe make new component
+
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
 
