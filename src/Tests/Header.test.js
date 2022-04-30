@@ -2,7 +2,7 @@ import Header from "../Components/Header";
 import { render, screen } from "@testing-library/react";
 import { ThingsProvider } from "../Context/MyContext";
 
-test.skip("[1] Renders without errors", () => {
+test("[1] Renders without errors", () => {
   render(
     <ThingsProvider>
       <Header />
@@ -10,7 +10,7 @@ test.skip("[1] Renders without errors", () => {
   );
 });
 
-test.skip("[2] AppBar appears on screen", () => {
+test("[2] AppBar appears on screen", () => {
   render(
     <ThingsProvider>
       <Header />
@@ -21,7 +21,7 @@ test.skip("[2] AppBar appears on screen", () => {
   expect(appBar).toBeVisible();
 });
 
-test.skip("[3] Header h1 and Button appear on screen", () => {
+test("[3] Header h1 and Button appear on screen", () => {
   render(
     <ThingsProvider>
       <Header />
