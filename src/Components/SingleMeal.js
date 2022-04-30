@@ -1,7 +1,10 @@
-import EditIcon from "@mui/icons-material/Edit";
+0import EditIcon from "@mui/icons-material/Edit";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
 import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
+import { Button } from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
