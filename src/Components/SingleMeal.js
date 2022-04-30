@@ -21,3 +21,8 @@ const SingleMeal = (props) => {
 };
 
 export default SingleMeal;
+
+//Needed for delete:
+//Item ID for StorageCtrl.getItemFromStorage
+//StorageCtrl.getItemFromStorage
+//maybe setMyThings
