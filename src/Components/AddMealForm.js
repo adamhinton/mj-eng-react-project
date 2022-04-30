@@ -77,6 +77,7 @@ export default function AddMealForm() {
             StorageCtrl.storeItem(newItem);
           }
           setMyThings(StorageCtrl.getItemsFromStorage());
+          setFormValues({ name: "", calories: 0 });
         }}
       >
         Add Meal
