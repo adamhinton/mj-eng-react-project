@@ -1,5 +1,7 @@
 import EditIcon from "@mui/icons-material/Edit";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
+import { useContext } from "react";
+import ThingsContext from "../Context/MyContext";
 
 const SingleMeal = (props) => {
   const { name, calories, id } = props;
