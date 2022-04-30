@@ -15,7 +15,13 @@ const SingleMeal = (props) => {
         <button className="meal-edit-button" data-testid="meal-edit-button">
           <EditIcon />
         </button>
-        <button>Dummy Button</button>
+        <button
+          onCLick={() => {
+            deleteSingleItemClick(id);
+          }}
+        >
+          Dummy Button
+        </button>
       </div>
     </li>
   );
@@ -27,3 +33,7 @@ export default SingleMeal;
 //Item ID for StorageCtrl.getItemFromStorage
 //StorageCtrl.getItemFromStorage
 //maybe setMyThings
+
+const deleteSingleItemClick = (id) => {
+  StorageCtrl.deleteItemFromStorage(id);
+};
