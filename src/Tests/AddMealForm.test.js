@@ -72,3 +72,14 @@ test("[5] Form values accept valid typed values, and reset on submit", () => {
   expect(screen.getByPlaceholderText("Add Item")).toHaveValue("");
   expect(screen.getByPlaceholderText("Add Calories")).toHaveValue(0);
 });
+
+test("[6] Calories input only accepts numbers", () => {
+  render(
+    <ThingsProvider>
+      <AddMealForm />
+    </ThingsProvider>
+  );
+
+  userEvent.type(screen.getByPlaceholderText("Add Calories"), "abc");
+  expect(screen.getByPlaceholderText("Add Calories")).toHaveValue(0);
+});
