@@ -1,4 +1,5 @@
 import EditIcon from "@mui/icons-material/Edit";
+import StorageCtrl from "../CrudFunctions/StorageCtrl";
 
 const SingleMeal = (props) => {
   const { name, calories, id } = props;
