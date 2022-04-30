@@ -16,7 +16,7 @@ const SingleMeal = (props) => {
           <EditIcon />
         </button>
         <button
-          onCLick={() => {
+          onClick={() => {
             deleteSingleItemClick(id);
           }}
         >
