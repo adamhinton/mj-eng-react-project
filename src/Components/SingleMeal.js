@@ -21,13 +21,13 @@ const SingleMeal = (props) => {
         <button className="meal-edit-button" data-testid="meal-edit-button">
           <EditIcon />
         </button>
-        <button
+        <Button
           onClick={() => {
             deleteSingleItemClick(id, setMyThings);
           }}
         >
-          Dummy Button
-        </button>
+          <DeleteIcon />
+        </Button>
       </div>
     </li>
   );
