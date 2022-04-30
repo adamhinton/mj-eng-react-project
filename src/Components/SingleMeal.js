@@ -21,7 +21,7 @@ const SingleMeal = (props) => {
         </button>
         <button
           onClick={() => {
-            deleteSingleItemClick(id);
+            deleteSingleItemClick(id, setMyThings);
           }}
         >
           Dummy Button
@@ -38,6 +38,9 @@ export default SingleMeal;
 //StorageCtrl.getItemFromStorage
 //maybe setMyThings
 
-const deleteSingleItemClick = (id) => {
+const deleteSingleItemClick = (id, setMyThings) => {
   StorageCtrl.deleteItemFromStorage(id);
+
+  const newContext = StorageCtrl.getItemsFromStorage();
+  setMyThings(newContext);
 };
