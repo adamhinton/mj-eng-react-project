@@ -1,7 +1,7 @@
 import EditIcon from "@mui/icons-material/Edit";
 
 const SingleMeal = (props) => {
-  const { name, calories } = props;
+  const { name, calories, id } = props;
 
   return (
     <li>
