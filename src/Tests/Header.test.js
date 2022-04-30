@@ -29,7 +29,7 @@ test("[3] Header h1 and Button appear on screen", () => {
   );
 
   const h1 = screen.getByTestId("header-h1");
-  const headerBtn = screen.getByTestId("header-btn");
+  const headerBtn = screen.getByTestId("clear-all-btn");
 
   expect(h1).toBeVisible();
   expect(headerBtn).toBeVisible();
