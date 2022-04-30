@@ -7,7 +7,7 @@ const testMeal = {
   calories: 12345,
 };
 
-test.skip("[1] Renders without errors", () => {
+test("[1] Renders without errors", () => {
   render(
     <ThingsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
@@ -15,7 +15,7 @@ test.skip("[1] Renders without errors", () => {
   );
 });
 
-test.skip("[2] Display correct meal name and calorie count", () => {
+test("[2] Display correct meal name and calorie count", () => {
   render(
     <ThingsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
@@ -29,7 +29,7 @@ test.skip("[2] Display correct meal name and calorie count", () => {
   expect(mealCountText).toBeVisible();
 });
 
-test.skip("[3] Displays meal edit icon", () => {
+test("[3] Displays meal edit icon", () => {
   render(
     <ThingsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
