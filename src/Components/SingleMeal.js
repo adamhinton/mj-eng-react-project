@@ -4,6 +4,7 @@ import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 //PLAN for edit single meal:
 
@@ -21,6 +22,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
   const { name, calories, id } = props;
+  console.log("props:", props);
 
   return (
     <li>
@@ -40,13 +42,14 @@ const SingleMeal = (props) => {
         >
           <DeleteIcon />
         </Button>
-        <button>Click me!</button>
       </div>
     </li>
   );
 };
 
 export default SingleMeal;
+
+const updateCurrentMeal = (newMealObject) => {};
 
 const deleteSingleItemClick = (id, setMyThings) => {
   StorageCtrl.deleteItemFromStorage(id);
