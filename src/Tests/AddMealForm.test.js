@@ -2,9 +2,9 @@ import AddMealForm from "../Components/AddMealForm";
 import { render, screen } from "@testing-library/react";
 import { ThingsProvider } from "../Context/MyContext";
 
-//I couldn't get these to work with a Provider component. Skipping for now.
+//I couldn't get these to work with a Provider component.ping for now.
 
-test.skip("[1] Renders without errors", () => {
+test("[1] Renders without errors", () => {
   render(
     <ThingsProvider>
       <AddMealForm />
@@ -12,7 +12,7 @@ test.skip("[1] Renders without errors", () => {
   );
 });
 
-test.skip("[2] Meal input and label appear on screen", () => {
+test("[2] Meal input and label appear on screen", () => {
   render(
     <ThingsProvider>
       <AddMealForm />
@@ -26,7 +26,7 @@ test.skip("[2] Meal input and label appear on screen", () => {
   expect(mealInput).toBeVisible();
 });
 
-test.skip("[3] Calories input and label appear on screen", () => {
+test("[3] Calories input and label appear on screen", () => {
   render(
     <ThingsProvider>
       <AddMealForm />
@@ -40,7 +40,7 @@ test.skip("[3] Calories input and label appear on screen", () => {
   expect(caloriesInput).toBeVisible();
 });
 
-test.skip("[4] Submit button appears in document", () => {
+test("[4] Submit button appears in document", () => {
   render(
     <ThingsProvider>
       <AddMealForm />
