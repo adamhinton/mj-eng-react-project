@@ -8,11 +8,19 @@ const testMeal = {
 };
 
 test.skip("[1] Renders without errors", () => {
-  render(<SingleMeal />);
+  render(
+    <ThingsProvider>
+      <SingleMeal name={testMeal.name} calories={testMeal.calories} />
+    </ThingsProvider>
+  );
 });
 
 test.skip("[2] Display correct meal name and calorie count", () => {
-  render(<SingleMeal name={testMeal.name} calories={testMeal.calories} />);
+  render(
+    <ThingsProvider>
+      <SingleMeal name={testMeal.name} calories={testMeal.calories} />
+    </ThingsProvider>
+  );
 
   const mealNameText = screen.getByText(/meal one/i);
   const mealCountText = screen.getByText(/12345/);
@@ -22,7 +30,11 @@ test.skip("[2] Display correct meal name and calorie count", () => {
 });
 
 test.skip("[3] Displays meal edit icon", () => {
-  render(<SingleMeal />);
+  render(
+    <ThingsProvider>
+      <SingleMeal name={testMeal.name} calories={testMeal.calories} />
+    </ThingsProvider>
+  );
 
   const mealEditBtn = screen.getByTestId("meal-edit-button");
 
