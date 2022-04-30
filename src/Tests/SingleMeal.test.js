@@ -6,11 +6,11 @@ const testMeal = {
   calories: 12345,
 };
 
-test("[1] Renders without errors", () => {
+test.skip("[1] Renders without errors", () => {
   render(<SingleMeal />);
 });
 
-test("[2] Display correct meal name and calorie count", () => {
+test.skip("[2] Display correct meal name and calorie count", () => {
   render(<SingleMeal name={testMeal.name} calories={testMeal.calories} />);
 
   const mealNameText = screen.getByText(/meal one/i);
@@ -20,7 +20,7 @@ test("[2] Display correct meal name and calorie count", () => {
   expect(mealCountText).toBeVisible();
 });
 
-test("[3] Displays meal edit icon", () => {
+test.skip("[3] Displays meal edit icon", () => {
   render(<SingleMeal />);
 
   const mealEditBtn = screen.getByTestId("meal-edit-button");
