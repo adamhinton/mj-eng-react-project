@@ -1,5 +1,6 @@
 import AddMealForm from "../Components/AddMealForm";
 import { render, screen } from "@testing-library/react";
+import { ThingsProvider } from "../Context/MyContext";
 
 //I couldn't get these to work with a Provider component. Skipping for now.
 
