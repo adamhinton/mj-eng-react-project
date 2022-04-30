@@ -42,6 +42,13 @@ const SingleMeal = (props) => {
         >
           <DeleteIcon />
         </Button>
+        <button
+          onClick={() => {
+            updateCurrentMeal({ name: "Test123", id: 0, calories: 1234 });
+          }}
+        >
+          Test
+        </button>
       </div>
     </li>
   );
@@ -49,7 +56,14 @@ const SingleMeal = (props) => {
 
 export default SingleMeal;
 
-const updateCurrentMeal = (newMealObject) => {};
+const updateCurrentMeal = (newMealObject) => {
+  console.log("newMealObject:", newMealObject);
+  const { name, calories } = newMealObject;
+
+  ItemCtrl.updateItem(name, calories);
+
+  return ItemCtrl.getItemById(newMealObject.id);
+};
 
 const deleteSingleItemClick = (id, setMyThings) => {
   StorageCtrl.deleteItemFromStorage(id);
