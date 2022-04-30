@@ -4,6 +4,8 @@ import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
 
 const SingleMeal = (props) => {
+  const { setMyThings } = useContext(ThingsContext);
+
   const { name, calories, id } = props;
 
   return (
