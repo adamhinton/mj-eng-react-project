@@ -93,8 +93,10 @@ const editForm = (
   return (
     <form
       className="edit-form"
-      onSubmit={() => {
+      onSubmit={(e) => {
+        e.preventDefault();
         updateCurrentMeal(formValues, setMyThings);
+        setIsEditMode(false);
       }}
     >
       <TextField
