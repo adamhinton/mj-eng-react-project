@@ -59,43 +59,9 @@ const SingleMeal = (props) => {
 
       {console.log("isEditMode:", isEditMode)}
 
-      {isEditMode ? (
-        <form
-          onSubmit={() => {
-            updateCurrentMeal(formValues, setMyThings);
-          }}
-        >
-          <TextField
-            data-testid="editmeal-input"
-            placeholder={formValues.name}
-            type="text"
-            name="meal-name"
-            value={formValues.name}
-            default={formValues.name}
-            onChange={(e) => {
-              setFormValues({
-                ...formValues,
-                name: e.target.value,
-              });
-            }}
-          />
-          <TextField
-            data-testid="edit-calories-input"
-            placeholder={String(calories)}
-            type="number"
-            name="calorie-calories"
-            value={formValues.calories}
-            onChange={(e) => {
-              setFormValues({
-                ...formValues,
-                calories: e.target.value,
-              });
-            }}
-          />
-
-          <Button type="submit">Submit</Button>
-        </form>
-      ) : null}
+      {isEditMode
+        ? editForm(formValues, setFormValues, setMyThings, calories)
+        : null}
     </li>
   );
 };
@@ -113,4 +79,44 @@ const deleteSingleItemClick = (id, setMyThings) => {
   StorageCtrl.deleteItemFromStorage(id);
   const newContext = StorageCtrl.getItemsFromStorage();
   setMyThings(newContext);
+};
+
+const editForm = (formValues, setFormValues, setMyThings, calories) => {
+  return (
+    <form
+      onSubmit={() => {
+        updateCurrentMeal(formValues, setMyThings);
+      }}
+    >
+      <TextField
+        data-testid="editmeal-input"
+        placeholder={formValues.name}
+        type="text"
+        name="meal-name"
+        value={formValues.name}
+        default={formValues.name}
+        onChange={(e) => {
+          setFormValues({
+            ...formValues,
+            name: e.target.value,
+          });
+        }}
+      />
+      <TextField
+        data-testid="edit-calories-input"
+        placeholder={String(calories)}
+        type="number"
+        name="calorie-calories"
+        value={formValues.calories}
+        onChange={(e) => {
+          setFormValues({
+            ...formValues,
+            calories: e.target.value,
+          });
+        }}
+      />
+
+      <Button type="submit">Submit</Button>
+    </form>
+  );
 };
