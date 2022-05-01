@@ -51,14 +51,14 @@ const ItemCtrl = (function () {
       });
       return found;
     },
-    updateItem: function (name, calories) {
+    updateItem: function (name, calories, id) {
       // Calories to number
       calories = parseInt(calories);
 
       let found = null;
 
       data.items.forEach(function (item) {
-        if (item.id === data.currentItem.id) {
+        if (item.id === id) {
           item.name = name;
           item.calories = calories;
           found = item;
