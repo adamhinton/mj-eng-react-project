@@ -81,6 +81,7 @@ const deleteSingleItemClick = (id, setMyThings) => {
   setMyThings(newContext);
 };
 
+//this is the edit form, I put it down here to keep things more readable. Only shows up after clicking edit button
 const editForm = (formValues, setFormValues, setMyThings, calories) => {
   return (
     <form
