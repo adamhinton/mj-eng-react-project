@@ -11,10 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: "Roboto";
-}
-
 main {
   width: 70%;
   margin: 0 auto;
