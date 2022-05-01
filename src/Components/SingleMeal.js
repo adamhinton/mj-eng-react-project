@@ -23,7 +23,7 @@ const SingleMeal = (props) => {
   });
 
   return (
-    <li>
+    <li className="single-meal-display-item">
       {/* when edit mode is NOT selected, this displays */}
       {!isEditMode && (
         <>
