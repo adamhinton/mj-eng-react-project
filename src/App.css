@@ -20,6 +20,7 @@ main {
   margin: 0 auto;
 }
 
+/* Begin header section */
 #header-styling {
   display: flex;
   flex-direction: row;
@@ -36,7 +37,9 @@ h1 {
   font-size: 1.4rem;
   font-weight: normal;
 }
+/* End Header section */
 
+/* Begin Add Meal Form section */
 form {
   border: 1px solid gray;
   padding: 3%;
@@ -76,14 +79,18 @@ form {
   font-size: 1.2rem;
   font-weight: 400;
 }
+/* End Add Meal Form section */
 
+/* Begin TotalCalories section */
 .total-calories-h3 {
   text-align: center;
   font-size: 2.92rem;
   margin-top: 3%;
   font-weight: 400;
 }
+/* End TotalCalories section */
 
+/* Begin MealDisplayContainer/SingleMeal section */
 ul {
   padding: 0;
 }
@@ -120,3 +127,5 @@ li {
   display: flex;
   justify-content: center;
 }
+
+/* End MealDisplayContainer/SingleMeal section */
