@@ -12,8 +12,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
   const { name, calories, id } = props;
-
+  //isEditMode is toggled when user clicks edit button
   const [isEditMode, setIsEditMode] = useState(false);
+  //the formValues are set when user fills out edit form
   const [formValues, setFormValues] = useState({
     name: name,
     calories: calories,
@@ -22,6 +23,7 @@ const SingleMeal = (props) => {
 
   return (
     <li>
+      {/* when edit mode isn't selected, this displays */}
       {!isEditMode && (
         <>
           <div>
@@ -48,6 +50,7 @@ const SingleMeal = (props) => {
           </div>
         </>
       )}
+      {/* When edit mode is selected, this displays */}
       {isEditMode &&
         editForm(
           formValues,
