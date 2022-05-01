@@ -9,7 +9,7 @@ const MealDisplayContainer = () => {
   const { myThings } = useContext(ThingsContext);
 
   return (
-    <ul>
+    <ul className="meal-display-container">
       {myThings.map((item) => {
         const { name, calories, id } = item;
         return <SingleMeal name={name} calories={calories} id={id} key={id} />;

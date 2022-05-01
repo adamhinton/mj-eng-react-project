@@ -87,7 +87,7 @@ form {
 /* End TotalCalories section */
 
 /* Begin MealDisplayContainer/SingleMeal section */
-ul {
+.meal-display-container {
   padding: 0;
 }
 
