@@ -32,7 +32,16 @@ const SingleMeal = (props) => {
       </div>
 
       <div>
-        <button className="meal-edit-button" data-testid="meal-edit-button">
+        <button
+          className="meal-edit-button"
+          data-testid="meal-edit-button"
+          onClick={() => {
+            updateCurrentMeal(
+              { name: "Test123", id: 1, calories: 1234 },
+              setMyThings
+            );
+          }}
+        >
           <EditIcon />
         </button>
         <Button
@@ -42,16 +51,6 @@ const SingleMeal = (props) => {
         >
           <DeleteIcon />
         </Button>
-        <button
-          onClick={() => {
-            updateCurrentMeal(
-              { name: "Test123", id: 1, calories: 1234 },
-              setMyThings
-            );
-          }}
-        >
-          Test
-        </button>
       </div>
     </li>
   );
