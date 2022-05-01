@@ -32,29 +32,31 @@ const SingleMeal = (props) => {
 
   return (
     <li>
-      <div>
-        <strong>{name}:</strong>
-        <em> {calories} Calories</em>
-      </div>
+      <section className="meal-display">
+        <div>
+          <strong>{name}:</strong>
+          <em> {calories} Calories</em>
+        </div>
 
-      <div>
-        <button
-          className="meal-edit-button"
-          data-testid="meal-edit-button"
-          onClick={() => {
-            setIsEditMode(!isEditMode);
-          }}
-        >
-          <EditIcon />
-        </button>
-        <Button
-          onClick={() => {
-            deleteSingleItemClick(id, setMyThings);
-          }}
-        >
-          <DeleteIcon />
-        </Button>
-      </div>
+        <div>
+          <button
+            className="meal-edit-button"
+            data-testid="meal-edit-button"
+            onClick={() => {
+              setIsEditMode(!isEditMode);
+            }}
+          >
+            <EditIcon />
+          </button>
+          <Button
+            onClick={() => {
+              deleteSingleItemClick(id, setMyThings);
+            }}
+          >
+            <DeleteIcon />
+          </Button>
+        </div>
+      </section>
 
       {isEditMode
         ? editForm(formValues, setFormValues, setMyThings, calories)
