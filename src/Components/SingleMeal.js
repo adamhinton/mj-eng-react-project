@@ -31,34 +31,40 @@ const SingleMeal = (props) => {
 
   return (
     <li>
-      {isEditMode ? (
-        <section className="edit-singleitem-form">
-          {editForm(formValues, setFormValues, setMyThings, calories)}
-        </section>
-      ) : (
-        <div>
-          <strong>{name}:</strong>
-          <em> {calories} Calories</em>
-        </div>
+      {!isEditMode && (
+        <>
+          <div>
+            <strong>{name}:</strong>
+            <em> {calories} Calories</em>
+          </div>
+          <div>
+            <button
+              className="meal-edit-button"
+              data-testid="meal-edit-button"
+              onClick={() => {
+                setIsEditMode(!isEditMode);
+              }}
+            >
+              <EditIcon />
+            </button>
+            <Button
+              onClick={() => {
+                deleteSingleItemClick(id, setMyThings);
+              }}
+            >
+              <DeleteIcon />
+            </Button>
+          </div>
+        </>
       )}
-      <div>
-        <button
-          className="meal-edit-button"
-          data-testid="meal-edit-button"
-          onClick={() => {
-            setIsEditMode(!isEditMode);
-          }}
-        >
-          <EditIcon />
-        </button>
-        <Button
-          onClick={() => {
-            deleteSingleItemClick(id, setMyThings);
-          }}
-        >
-          <DeleteIcon />
-        </Button>
-      </div>
+      {isEditMode &&
+        editForm(
+          formValues,
+          setFormValues,
+          setMyThings,
+          calories,
+          setIsEditMode
+        )}
     </li>
   );
 };
@@ -77,7 +83,13 @@ const deleteSingleItemClick = (id, setMyThings) => {
 };
 
 //this is the edit form, I put it down here to keep things more readable. Only shows up after clicking edit button
-const editForm = (formValues, setFormValues, setMyThings, calories) => {
+const editForm = (
+  formValues,
+  setFormValues,
+  setMyThings,
+  calories,
+  setIsEditMode
+) => {
   return (
     <form
       className="edit-form"
@@ -114,6 +126,13 @@ const editForm = (formValues, setFormValues, setMyThings, calories) => {
       />
 
       <Button type="submit">Submit</Button>
+      <Button
+        onClick={() => {
+          setIsEditMode(false);
+        }}
+      >
+        Cancel
+      </Button>
     </form>
   );
 };
