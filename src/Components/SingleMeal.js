@@ -5,19 +5,6 @@ import ThingsContext from "../Context/MyContext";
 import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-//PLAN for edit single meal:
-
-//FUNCTIONALITY:
-//Write functionality to edit SM
-//take from template
-//confirm it works first with dummy data
-
-//UI:
-//Set isEditing, setIsEditing to state
-//if false, display component as usual
-//if true, show form fields and submit btn in SM.js to edit
-//Maybe make new component just for the form and nest it
-
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
   const { name, calories, id } = props;
