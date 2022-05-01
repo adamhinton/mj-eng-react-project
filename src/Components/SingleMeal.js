@@ -127,14 +127,16 @@ const editForm = (
         }}
       />
 
-      <Button type="submit">Submit</Button>
-      <Button
-        onClick={() => {
-          setIsEditMode(false);
-        }}
-      >
-        Cancel
-      </Button>
+      <div className="edit-form-btns-container">
+        <Button type="submit">Submit</Button>
+        <Button
+          onClick={() => {
+            setIsEditMode(false);
+          }}
+        >
+          Cancel
+        </Button>
+      </div>
     </form>
   );
 };

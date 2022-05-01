@@ -68,7 +68,21 @@ li {
   align-items: center;
 }
 
+.edit-form {
+  border: none;
+  height: 80px;
+}
+
+.edit-form input {
+  height: 0.25rem;
+}
+
 .meal-edit-button {
   background: none;
   border: none;
+}
+
+.edit-form-btns-container {
+  display: flex;
+  justify-content: center;
 }
