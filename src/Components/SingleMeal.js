@@ -32,14 +32,15 @@ const SingleMeal = (props) => {
   return (
     <li>
       {isEditMode ? (
-        editForm(formValues, setFormValues, setMyThings, calories)
+        <section className="edit-singleitem-form">
+          {editForm(formValues, setFormValues, setMyThings, calories)}
+        </section>
       ) : (
         <div>
           <strong>{name}:</strong>
           <em> {calories} Calories</em>
         </div>
       )}
-
       <div>
         <button
           className="meal-edit-button"
