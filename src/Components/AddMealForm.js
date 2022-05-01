@@ -10,7 +10,7 @@ import StorageCtrl from "../CrudFunctions/StorageCtrl";
 import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 export default function AddMealForm() {
-  const { myThings, setMyThings } = useContext(ThingsContext);
+  const { setMyThings } = useContext(ThingsContext);
 
   const [formValues, setFormValues] = useState({ name: "", calories: 0 });
 
