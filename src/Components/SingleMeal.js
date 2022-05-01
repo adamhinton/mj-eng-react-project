@@ -32,10 +32,14 @@ const SingleMeal = (props) => {
 
   return (
     <li>
-      <div>
-        <strong>{name}:</strong>
-        <em> {calories} Calories</em>
-      </div>
+      {isEditMode ? (
+        editForm(formValues, setFormValues, setMyThings, calories)
+      ) : (
+        <div>
+          <strong>{name}:</strong>
+          <em> {calories} Calories</em>
+        </div>
+      )}
 
       <div>
         <button
@@ -55,10 +59,6 @@ const SingleMeal = (props) => {
           <DeleteIcon />
         </Button>
       </div>
-
-      {isEditMode
-        ? editForm(formValues, setFormValues, setMyThings, calories)
-        : null}
     </li>
   );
 };
