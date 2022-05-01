@@ -18,8 +18,8 @@ const TotalCalories = () => {
   });
 
   return (
-    <h3 data-testid="total-calories" className="total-calories-h3">
-      Total Calories: {totalCalories}{" "}
+    <h3 data-testid="total-calories-h3" className="total-calories-h3">
+      Total Calories: {totalCalories}
     </h3>
   );
 };
