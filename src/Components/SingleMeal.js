@@ -1,8 +1,8 @@
 import EditIcon from "@mui/icons-material/Edit";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ThingsContext from "../Context/MyContext";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
@@ -24,11 +24,56 @@ const SingleMeal = (props) => {
   const { name, calories, id } = props;
   // console.log("props:", props);
 
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [formValues, setFormValues] = useState({
+    name: name,
+    calories: calories,
+    id: id,
+  });
+
   return (
     <li>
       <div>
         <strong>{name}:</strong>
         <em> {calories} Calories</em>
+
+        <section>
+          <TextField
+            data-testid="editmeal-input"
+            placeholder={formValues.name}
+            type="text"
+            name="meal-name"
+            value={formValues.name}
+            default={formValues.name}
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                name: e.target.value,
+              });
+            }}
+          />
+          <TextField
+            data-testid="edit-calories-input"
+            placeholder={String(calories)}
+            type="number"
+            name="calorie-calories"
+            value={formValues.calories}
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                calories: e.target.value,
+              });
+            }}
+          />
+
+          <Button
+            onClick={() => {
+              updateCurrentMeal(formValues, setMyThings);
+            }}
+          >
+            Submit
+          </Button>
+        </section>
       </div>
 
       <div>
@@ -36,10 +81,7 @@ const SingleMeal = (props) => {
           className="meal-edit-button"
           data-testid="meal-edit-button"
           onClick={() => {
-            updateCurrentMeal(
-              { name: "Test123", id: 1, calories: 1234 },
-              setMyThings
-            );
+            setIsEditMode(!isEditMode);
           }}
         >
           <EditIcon />
