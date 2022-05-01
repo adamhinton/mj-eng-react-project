@@ -1,3 +1,7 @@
+//This component serves as both the single meal's display,
+//And also that meal's edit form when user clicks edit button.
+//when isEditMode is true, it displays the form called by the function editForm().
+
 import EditIcon from "@mui/icons-material/Edit";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
 import { useContext, useState } from "react";
