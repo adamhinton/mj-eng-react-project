@@ -4,7 +4,6 @@ import { useContext, useState } from "react";
 import ThingsContext from "../Context/MyContext";
 import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 //PLAN for edit single meal:
 
