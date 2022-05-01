@@ -70,8 +70,6 @@ export default SingleMeal;
 
 const updateCurrentMeal = (newMealObject, setMyThings) => {
   StorageCtrl.updateItemStorage(newMealObject);
-
-  console.log("new data:", StorageCtrl.getItemsFromStorage());
   setMyThings(StorageCtrl.getItemsFromStorage());
 };
 
