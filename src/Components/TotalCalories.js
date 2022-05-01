@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import ItemCtrl from "../CrudFunctions/ItemCtrl";
 import ThingsContext from "../Context/MyContext";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
 
 const TotalCalories = () => {
-  // console.log("context changing in TC:");
   useContext(ThingsContext);
 
   const currentData = StorageCtrl.getItemsFromStorage();
