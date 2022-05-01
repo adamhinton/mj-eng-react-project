@@ -37,7 +37,11 @@ const SingleMeal = (props) => {
         <strong>{name}:</strong>
         <em> {calories} Calories</em>
 
-        <section>
+        <form
+          onSubmit={() => {
+            updateCurrentMeal(formValues, setMyThings);
+          }}
+        >
           <TextField
             data-testid="editmeal-input"
             placeholder={formValues.name}
@@ -66,14 +70,8 @@ const SingleMeal = (props) => {
             }}
           />
 
-          <Button
-            onClick={() => {
-              updateCurrentMeal(formValues, setMyThings);
-            }}
-          >
-            Submit
-          </Button>
-        </section>
+          <Button type="submit">Submit</Button>
+        </form>
       </div>
 
       <div>
