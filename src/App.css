@@ -13,6 +13,7 @@ body {
 
 main {
   width: 70%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -126,3 +127,10 @@ form {
 }
 
 /* End MealDisplayContainer/SingleMeal section */
+
+/* Begin responsive design stuff */
+@media only screen and (max-width: 860px) {
+  main {
+    width: 90%;
+  }
+}
