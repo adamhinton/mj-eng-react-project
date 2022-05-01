@@ -139,4 +139,14 @@ form {
   #header-styling {
     flex-direction: column;
   }
+  #add-meal-form {
+    margin-top: 130px;
+  }
+  .single-meal-edit-form {
+    flex-direction: column;
+  }
+
+  .single-meal-display-item {
+    flex-direction: column;
+  }
 }
