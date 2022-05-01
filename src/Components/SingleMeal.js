@@ -80,6 +80,7 @@ const deleteSingleItemClick = (id, setMyThings) => {
 const editForm = (formValues, setFormValues, setMyThings, calories) => {
   return (
     <form
+      className="edit-form"
       onSubmit={() => {
         updateCurrentMeal(formValues, setMyThings);
       }}
