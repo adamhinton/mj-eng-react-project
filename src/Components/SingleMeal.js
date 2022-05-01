@@ -10,6 +10,7 @@ import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const SingleMeal = (props) => {
+  //setMyThings updates context with the edited meal. Used for editing.
   const { setMyThings } = useContext(ThingsContext);
   const { name, calories, id } = props;
   //isEditMode is toggled when user clicks edit button
@@ -23,7 +24,7 @@ const SingleMeal = (props) => {
 
   return (
     <li>
-      {/* when edit mode isn't selected, this displays */}
+      {/* when edit mode is NOT selected, this displays */}
       {!isEditMode && (
         <>
           <div>
@@ -31,6 +32,7 @@ const SingleMeal = (props) => {
             <em> {calories} Calories</em>
           </div>
           <div className="meal-display-button-container">
+            {/* Edit selected item */}
             <button
               className="single-meal-edit-button"
               data-testid="meal-edit-button"
@@ -40,6 +42,7 @@ const SingleMeal = (props) => {
             >
               <EditIcon />
             </button>
+            {/* Delete selected item */}
             <Button
               onClick={() => {
                 deleteSingleItemClick(id, setMyThings);
@@ -50,7 +53,7 @@ const SingleMeal = (props) => {
           </div>
         </>
       )}
-      {/* When edit mode is selected, this displays */}
+      {/* When edit mode IS selected, this edit form displays */}
       {isEditMode &&
         editForm(
           formValues,
@@ -65,11 +68,13 @@ const SingleMeal = (props) => {
 
 export default SingleMeal;
 
+//edit current item
 const updateCurrentMeal = (newMealObject, setMyThings) => {
   StorageCtrl.updateItemStorage(newMealObject);
   setMyThings(StorageCtrl.getItemsFromStorage());
 };
 
+//Delete selected item
 const deleteSingleItemClick = (id, setMyThings) => {
   StorageCtrl.deleteItemFromStorage(id);
   const newContext = StorageCtrl.getItemsFromStorage();
