@@ -3,6 +3,17 @@
   max-width: 100%;
 }
 
+body {
+  margin: 0;
+  font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: "Roboto";
+}
+
 main {
   width: 70%;
   margin: 0 auto;
