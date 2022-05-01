@@ -72,7 +72,7 @@ li {
   align-items: center;
 }
 
-.edit-form {
+.single-meal-edit-form {
   border: none;
   display: flex;
   justify-content: center;
