@@ -30,7 +30,7 @@ const SingleMeal = (props) => {
             <strong>{name}:</strong>
             <em> {calories} Calories</em>
           </div>
-          <div>
+          <div className="meal-display-button-container">
             <button
               className="meal-edit-button"
               data-testid="meal-edit-button"

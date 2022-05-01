@@ -24,6 +24,10 @@ form {
   padding: 3%;
 }
 
+.meal-display-button-container {
+  display: flex;
+}
+
 #add-meal-form {
   margin-top: 90px;
   display: flex;
