@@ -32,7 +32,7 @@ const SingleMeal = (props) => {
           </div>
           <div className="meal-display-button-container">
             <button
-              className="meal-edit-button"
+              className="single-meal-edit-button"
               data-testid="meal-edit-button"
               onClick={() => {
                 setIsEditMode(!isEditMode);
@@ -121,7 +121,7 @@ const editForm = (
         }}
       />
 
-      <div className="edit-form-btns-container">
+      <div className="single-meal-edit-form-btns-container">
         <Button type="submit">Submit</Button>
         <Button
           onClick={() => {

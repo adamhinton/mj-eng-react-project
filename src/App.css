@@ -81,16 +81,16 @@ li {
   width: 100%;
 }
 
-.edit-form input {
+.single-meal-edit-form input {
   height: 0.25rem;
 }
 
-.meal-edit-button {
+.single-meal-edit-button {
   background: none;
   border: none;
 }
 
-.edit-form-btns-container {
+.single-meal-edit-form-btns-container {
   display: flex;
   justify-content: center;
 }
