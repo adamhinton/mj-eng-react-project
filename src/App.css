@@ -74,7 +74,11 @@ li {
 
 .edit-form {
   border: none;
-  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
+  width: 100%;
 }
 
 .edit-form input {
