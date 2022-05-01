@@ -22,7 +22,6 @@ import ItemCtrl from "../CrudFunctions/ItemCtrl";
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
   const { name, calories, id } = props;
-  // console.log("props:", props);
 
   const [isEditMode, setIsEditMode] = useState(false);
   const [formValues, setFormValues] = useState({
@@ -56,8 +55,6 @@ const SingleMeal = (props) => {
           <DeleteIcon />
         </Button>
       </div>
-
-      {console.log("isEditMode:", isEditMode)}
 
       {isEditMode
         ? editForm(formValues, setFormValues, setMyThings, calories)
