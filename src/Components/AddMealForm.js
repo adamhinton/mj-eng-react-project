@@ -21,7 +21,9 @@ export default function AddMealForm() {
   return (
     <form>
       <Paper id="add-meal-form">
-        <h2 data-testid="form-h2">Add Meal / Food Item</h2>
+        <h2 data-testid="add-meal-form-h2" className="add-meal-form-h2">
+          Add Meal / Food Item
+        </h2>
 
         <section className="all-form-items">
           <div className="form-item-container">
@@ -68,8 +70,8 @@ export default function AddMealForm() {
         </section>
       </Paper>
       <Button
-        id="submit-button"
-        data-testid="submit-btn"
+        id="add-meal-submit-button"
+        data-testid="add-meal-submit-btn"
         variant="contained"
         type="submit"
         onClick={(e) => {
