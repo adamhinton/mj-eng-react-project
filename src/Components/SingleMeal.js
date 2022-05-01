@@ -57,41 +57,45 @@ const SingleMeal = (props) => {
         </Button>
       </div>
 
-      <form
-        onSubmit={() => {
-          updateCurrentMeal(formValues, setMyThings);
-        }}
-      >
-        <TextField
-          data-testid="editmeal-input"
-          placeholder={formValues.name}
-          type="text"
-          name="meal-name"
-          value={formValues.name}
-          default={formValues.name}
-          onChange={(e) => {
-            setFormValues({
-              ...formValues,
-              name: e.target.value,
-            });
-          }}
-        />
-        <TextField
-          data-testid="edit-calories-input"
-          placeholder={String(calories)}
-          type="number"
-          name="calorie-calories"
-          value={formValues.calories}
-          onChange={(e) => {
-            setFormValues({
-              ...formValues,
-              calories: e.target.value,
-            });
-          }}
-        />
+      {console.log("isEditMode:", isEditMode)}
 
-        <Button type="submit">Submit</Button>
-      </form>
+      {isEditMode ? (
+        <form
+          onSubmit={() => {
+            updateCurrentMeal(formValues, setMyThings);
+          }}
+        >
+          <TextField
+            data-testid="editmeal-input"
+            placeholder={formValues.name}
+            type="text"
+            name="meal-name"
+            value={formValues.name}
+            default={formValues.name}
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                name: e.target.value,
+              });
+            }}
+          />
+          <TextField
+            data-testid="edit-calories-input"
+            placeholder={String(calories)}
+            type="number"
+            name="calorie-calories"
+            value={formValues.calories}
+            onChange={(e) => {
+              setFormValues({
+                ...formValues,
+                calories: e.target.value,
+              });
+            }}
+          />
+
+          <Button type="submit">Submit</Button>
+        </form>
+      ) : null}
     </li>
   );
 };
