@@ -1,3 +1,6 @@
+// This component displays the total calories of all saved meals.
+// Updates when a meal is added, deleted or modified.
+
 import React, { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
