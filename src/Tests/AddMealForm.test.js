@@ -48,7 +48,7 @@ test("[4] Submit button appears in document", () => {
     </ThingsProvider>
   );
 
-  const submitBtn = screen.getByTestId("submit-btn");
+  const submitBtn = screen.getByTestId("add-meal-submit-btn");
   expect(submitBtn).toBeVisible();
 });
 
@@ -65,7 +65,7 @@ test("[5] Form values accept valid typed values, and reset on submit", () => {
   expect(screen.getByPlaceholderText("Add Item")).toHaveValue("abc");
   expect(screen.getByPlaceholderText("Add Calories")).toHaveValue(123);
 
-  const submitBtn = screen.getByTestId("submit-btn");
+  const submitBtn = screen.getByTestId("add-meal-submit-btn");
 
   userEvent.click(submitBtn);
 
