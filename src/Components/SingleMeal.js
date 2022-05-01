@@ -22,7 +22,7 @@ import ItemCtrl from "../CrudFunctions/ItemCtrl";
 const SingleMeal = (props) => {
   const { setMyThings } = useContext(ThingsContext);
   const { name, calories, id } = props;
-  console.log("props:", props);
+  // console.log("props:", props);
 
   return (
     <li>
@@ -44,7 +44,10 @@ const SingleMeal = (props) => {
         </Button>
         <button
           onClick={() => {
-            updateCurrentMeal({ name: "Test123", id: 1, calories: 1234 });
+            updateCurrentMeal(
+              { name: "Test123", id: 1, calories: 1234 },
+              setMyThings
+            );
           }}
         >
           Test
@@ -56,13 +59,11 @@ const SingleMeal = (props) => {
 
 export default SingleMeal;
 
-const updateCurrentMeal = (newMealObject) => {
-  console.log("newMealObject:", newMealObject);
-  const { name, calories, id } = newMealObject;
+const updateCurrentMeal = (newMealObject, setMyThings) => {
+  StorageCtrl.updateItemStorage(newMealObject);
 
-  ItemCtrl.updateItem(name, calories, id);
-
-  return ItemCtrl.getItemById(newMealObject.id);
+  console.log("new data:", StorageCtrl.getItemsFromStorage());
+  setMyThings(StorageCtrl.getItemsFromStorage());
 };
 
 const deleteSingleItemClick = (id, setMyThings) => {
