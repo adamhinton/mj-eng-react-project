@@ -1,6 +1,6 @@
 import SingleMeal from "../Components/SingleMeal";
 import { render, screen } from "@testing-library/react";
-import { ThingsProvider } from "../Context/MyContext";
+import { MealsProvider } from "../Context/MyContext";
 import userEvent from "@testing-library/user-event";
 
 const testMeal = {
@@ -10,17 +10,17 @@ const testMeal = {
 
 test("[1] Renders without errors", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
-    </ThingsProvider>
+    </MealsProvider>
   );
 });
 
 test("[2] Display correct meal name and calorie count", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   const mealNameText = screen.getByText(/meal one/i);
@@ -32,9 +32,9 @@ test("[2] Display correct meal name and calorie count", () => {
 
 test("[3] Displays meal edit icon", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   const mealEditBtn = screen.getByTestId("meal-edit-button");
@@ -44,9 +44,9 @@ test("[3] Displays meal edit icon", () => {
 
 test("[4] SingleMeal edit form appears only after user clicks edit button", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <SingleMeal name={testMeal.name} calories={testMeal.calories} />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   const mealEditBtn = screen.getByTestId("meal-edit-button");
