@@ -55,32 +55,29 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### APP DOCUMENTATION:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### `COMPONENT STRUCTURE`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<ThingsProvider> global state management
+<App>
 
-### Code Splitting
+<Header/>
+<AddMealForm/> add meal to list
+<TotalCalories/>
+<MealDisplayContainer>
+<SingleMeal/> (as many meals as needed)
+<MealDisplayContainer/>
+<App/>
+<ThingsProvider/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### `FILE BREAKDOWN`
 
-### Analyzing the Bundle Size
+MyContext.js: <ThingsProvider/>
+-Provides global state management via Context API (https://reactjs.org/docs/context.html)
+-Specifically, holds the persisted list of meals to display
+-Has variables setmealsListGlobalState (to change list of meals) and mealsListGlobalState (the actual array of meal objects)
+-All components nested within ThingsProvider have access to this data now
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App.js: <App/>
+-Standard React App component. Houses all the other components
