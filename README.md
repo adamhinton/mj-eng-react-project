@@ -15,6 +15,9 @@ Some components come from Material UI: https://mui.com/
 PERSISTENT DATA STORAGE:
 All user-inputted meals info is stored in localStorage
 
+UNIT TESTING:
+Used Jest unit testing library:
+
 PLANNING:
 COMPONENTS:
 []Header
@@ -137,3 +140,17 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 -Takes meal list from Context global state and maps over it, producing a <SingleMeal/> for each
 -The idea is to display the list of meals in a digestible manner
 -Passes meal name, id and calorie count in as props to SingleMeal
+
+### `SingleMeal.js: <SingleMeal/>`
+
+-Imports EditIcon, Button and TextField from MUI for component usage
+-Displays a single meal that was inputted by user (name and calorie count)
+-Takes the name, id and calorie count of meal in as props from MealDisplayContainer.js
+-Trash button to delete item
+
+EDIT FUNCTIONALITY of SingleMeal:
+-Edit button to pull up edit form:
+.User toggles edit mode by hitting edit button (saved in state as boolean: isEditMode, setIsEditMode)
+.User can change name and calorie count of meal in edit form
+.User submits or cancels their edit, then component reverts back to default display mode
+-function editForm is called when edit button is hit, then displays the edit form
