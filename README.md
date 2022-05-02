@@ -55,9 +55,9 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-### APP DOCUMENTATION:
+# APP DOCUMENTATION:
 
-### `COMPONENT STRUCTURE`
+## `COMPONENT STRUCTURE`
 
 <ThingsProvider> global state management
 <App>
@@ -71,13 +71,32 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 <App/>
 <ThingsProvider/>
 
-### `FILE BREAKDOWN`
+## `FILE BREAKDOWN`
 
-MyContext.js: <ThingsProvider/>
+### `ItemCtrl.js`
+
+-Works in tandem with StorageCtrl.js
+-Has various functions for seeing, creating, updating and deleting meal items
+-These are imported in to various files in the app
+
+### `StorageCtrl.js`
+
+-Works in tandem with ItemCtrl.js
+-Has various functions for storing, getting, updating and deleting individual meals, or all meals, from localStorage
+
+### `App.js: <App/>`
+
+-Standard React App component. Houses all the other components
+
+### `MyContext.js: <ThingsProvider/>`
+
 -Provides global state management via Context API (https://reactjs.org/docs/context.html)
 -Specifically, holds the persisted list of meals to display
 -Has variables setmealsListGlobalState (to change list of meals) and mealsListGlobalState (the actual array of meal objects)
 -All components nested within ThingsProvider have access to this data now
 
-App.js: <App/>
--Standard React App component. Houses all the other components
+### `Header.js: <Header/>`
+
+-Title (Calorie Counter)
+-Clear All Button:
+.Deletes all meal items from localStorage and from Context global state, resetting meals display
