@@ -50,6 +50,7 @@ form {
   margin-top: 90px;
   display: flex;
   flex-direction: column;
+  box-shadow: none;
 }
 
 .add-meal-form-h2 {
