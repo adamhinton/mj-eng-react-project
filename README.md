@@ -72,7 +72,7 @@ App.js
 -		MealDisplayContainer.js
 -			SingleMeal.js:  (as many meals as needed)
 -		MealDisplayContainer
--	MealsProvider/> 
+-	MealsProvider
 -App.js
 
 ## `FILE BREAKDOWN`
