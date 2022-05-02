@@ -92,6 +92,7 @@ const editForm = (
   return (
     <form
       className="single-meal-edit-form"
+      data-testid="single-meal-edit-form"
       onSubmit={(e) => {
         e.preventDefault();
         updateCurrentMeal(formValues, setMyThings);
