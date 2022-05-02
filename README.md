@@ -4,6 +4,17 @@
 -Has full CRUD functionality, allowing user to update, delete, read and add meals
 -Displays total calories of all meals
 
+# `TECHNOLOGIES USED:`
+
+GLOBAL STATE MANAGEMENT:
+Context API: https://reactjs.org/docs/context.html
+
+COMPONENT DESIGN:
+Some components come from Material UI: https://mui.com/
+
+PERSISTENT DATA STORAGE:
+All user-inputted meals info is stored in localStorage
+
 PLANNING:
 COMPONENTS:
 []Header
