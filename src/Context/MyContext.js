@@ -6,20 +6,20 @@ import { createContext } from "react";
 import { useState } from "react";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
 
-const ThingsContext = createContext();
-export default ThingsContext;
+const MealsContext = createContext();
+export default MealsContext;
 
-export const ThingsProvider = ({ children }) => {
+export const MealsProvider = ({ children }) => {
   // "Things" is the list of meals
-  const things = StorageCtrl.getMealsFromStorage();
+  const meals = StorageCtrl.getMealsFromStorage();
   //allows components to edit and view list of meals
-  const [mealsListGlobalState, setmealsListGlobalState] = useState(things);
+  const [mealsListGlobalState, setmealsListGlobalState] = useState(meals);
 
   return (
-    <ThingsContext.Provider
+    <MealsContext.Provider
       value={{ mealsListGlobalState, setmealsListGlobalState }}
     >
       {children}
-    </ThingsContext.Provider>
+    </MealsContext.Provider>
   );
 };
