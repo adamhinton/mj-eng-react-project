@@ -1,20 +1,20 @@
 import Header from "../Components/Header";
 import { render, screen } from "@testing-library/react";
-import { ThingsProvider } from "../Context/MyContext";
+import { MealsProvider } from "../Context/MyContext";
 
 test("[1] Renders without errors", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <Header />
-    </ThingsProvider>
+    </MealsProvider>
   );
 });
 
 test("[2] AppBar appears on screen", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <Header />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   const appBar = screen.getByTestId("appBar");
@@ -23,9 +23,9 @@ test("[2] AppBar appears on screen", () => {
 
 test("[3] Header h1 and Button appear on screen", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <Header />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   const h1 = screen.getByTestId("header-h1");

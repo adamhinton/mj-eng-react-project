@@ -1,27 +1,27 @@
 import AddMealForm from "../Components/AddMealForm";
 import { render, screen } from "@testing-library/react";
-import { ThingsProvider } from "../Context/MyContext";
+import { MealsProvider } from "../Context/MyContext";
 import userEvent from "@testing-library/user-event";
 
 //I couldn't get these to work with a Provider component.ping for now.
 
 test("[1] Renders without errors", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <AddMealForm />
-    </ThingsProvider>
+    </MealsProvider>
   );
 });
 
 test("[2] Meal input and label appear on screen", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <AddMealForm />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
-  const mealLabel = screen.getByTestId("meal-label");
-  const mealInput = screen.getByTestId("meal-input");
+  const mealLabel = screen.getByTestId("add-new-meal-name-label");
+  const mealInput = screen.getByTestId("add-new-meal-name-input");
 
   expect(mealLabel).toBeVisible();
   expect(mealInput).toBeVisible();
@@ -29,13 +29,13 @@ test("[2] Meal input and label appear on screen", () => {
 
 test("[3] Calories input and label appear on screen", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <AddMealForm />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
-  const caloriesLabel = screen.getByTestId("calories-label");
-  const caloriesInput = screen.getByTestId("calories-input");
+  const caloriesLabel = screen.getByTestId("add-new-meal-calories-label");
+  const caloriesInput = screen.getByTestId("add-new-meal-calories-input");
 
   expect(caloriesLabel).toBeVisible();
   expect(caloriesInput).toBeVisible();
@@ -43,9 +43,9 @@ test("[3] Calories input and label appear on screen", () => {
 
 test("[4] Submit button appears in document", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <AddMealForm />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   const submitBtn = screen.getByTestId("add-meal-submit-btn");
@@ -54,9 +54,9 @@ test("[4] Submit button appears in document", () => {
 
 test("[5] Form values accept valid typed values, and reset on submit", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <AddMealForm />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   userEvent.type(screen.getByPlaceholderText("Add Item"), "abc");
@@ -75,9 +75,9 @@ test("[5] Form values accept valid typed values, and reset on submit", () => {
 
 test("[6] Calories input only accepts numbers", () => {
   render(
-    <ThingsProvider>
+    <MealsProvider>
       <AddMealForm />
-    </ThingsProvider>
+    </MealsProvider>
   );
 
   userEvent.type(screen.getByPlaceholderText("Add Calories"), "abc");

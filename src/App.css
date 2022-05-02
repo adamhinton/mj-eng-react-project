@@ -30,7 +30,7 @@ h1 {
   font-weight: normal;
 }
 
-#header-button {
+#header-clearall-button {
   font-size: 1.4rem;
   font-weight: normal;
 }
@@ -89,7 +89,7 @@ form {
 /* End TotalCalories section */
 
 /* Begin MealDisplayContainer/SingleMeal section */
-.meal-display-container {
+.all-meals-display-container {
   padding: 0;
 }
 
