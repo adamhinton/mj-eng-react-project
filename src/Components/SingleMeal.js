@@ -1,6 +1,6 @@
 //This component serves as both the single meal's display,
 //And also that meal's edit form when user clicks edit button.
-//when isEditMode is true, it displays the form called by the function editForm().
+//when isEditMode is true, it displays the form called by the function generateSingleMealEditForm().
 
 import EditIcon from "@mui/icons-material/Edit";
 import StorageCtrl from "../CrudFunctions/StorageCtrl";
@@ -57,7 +57,7 @@ const SingleMeal = (props) => {
       )}
       {/* When edit mode IS selected, this edit form displays */}
       {isEditMode &&
-        editForm(
+        generateSingleMealEditForm(
           formValues,
           setFormValues,
           setmealsListGlobalState,
@@ -84,7 +84,7 @@ const deleteSingleMealClick = (id, setmealsListGlobalState) => {
 };
 
 //this is the edit form, I put it down here to keep things more readable. Only shows up after clicking edit button
-const editForm = (
+const generateSingleMealEditForm = (
   formValues,
   setFormValues,
   setmealsListGlobalState,

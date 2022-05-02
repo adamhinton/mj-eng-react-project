@@ -153,4 +153,4 @@ EDIT FUNCTIONALITY of SingleMeal:
 .User toggles edit mode by hitting edit button (saved in state as boolean: isEditMode, setIsEditMode)
 .User can change name and calorie count of meal in edit form
 .User submits or cancels their edit, then component reverts back to default display mode
--function editForm is called when edit button is hit, then displays the edit form
+-function generateSingleMealEditForm is called when edit button is hit, then displays the edit form
