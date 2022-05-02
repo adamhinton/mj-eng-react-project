@@ -1,3 +1,6 @@
+// This component allows user to add a form (name and calorie count), and stores it in localStorage.
+//The meal will be displayed in SingleMeal at bottom of screen.
+
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { Paper } from "@material-ui/core";
@@ -10,14 +13,17 @@ import StorageCtrl from "../CrudFunctions/StorageCtrl";
 import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 export default function AddMealForm() {
-  const { myThings, setMyThings } = useContext(ThingsContext);
+  //setMyThings lets user update meal list in context
+  const { setMyThings } = useContext(ThingsContext);
 
   const [formValues, setFormValues] = useState({ name: "", calories: 0 });
 
   return (
     <form>
       <Paper id="add-meal-form">
-        <h2 data-testid="form-h2">Add Meal / Food Item</h2>
+        <h2 data-testid="add-meal-form-h2" className="add-meal-form-h2">
+          Add Meal / Food Item
+        </h2>
 
         <section className="all-form-items">
           <div className="form-item-container">
@@ -64,8 +70,8 @@ export default function AddMealForm() {
         </section>
       </Paper>
       <Button
-        id="submit-button"
-        data-testid="submit-btn"
+        id="add-meal-submit-button"
+        data-testid="add-meal-submit-btn"
         variant="contained"
         type="submit"
         onClick={(e) => {
@@ -73,9 +79,11 @@ export default function AddMealForm() {
           const input = formValues;
           const newItem = ItemCtrl.addItem(input.name, input.calories);
 
+          //now to store item in localStorage
           if (input.name !== "" && input.calories !== "") {
             StorageCtrl.storeItem(newItem);
           }
+
           setMyThings(StorageCtrl.getItemsFromStorage());
           setFormValues({ name: "", calories: 0 });
         }}

@@ -1,3 +1,5 @@
+// This is fairly self explanatory. A header with an h1, and a Clear All button which allows user to delete all stored meals.
+
 import { AppBar } from "@mui/material";
 import { Button } from "@mui/material";
 import ItemCtrl from "../CrudFunctions/ItemCtrl";
@@ -6,6 +8,7 @@ import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
 
 const Header = () => {
+  //setMyThings lets user update context (meals list)
   const { setMyThings } = useContext(ThingsContext);
 
   return (
@@ -16,6 +19,7 @@ const Header = () => {
         variant="contained"
         data-testid="clear-all-btn"
         onClick={() => {
+          //delete all items
           clearAllItemsClick(setMyThings);
         }}
       >
@@ -28,6 +32,7 @@ const Header = () => {
 export default Header;
 
 const clearAllItemsClick = (setMyThings) => {
+  //delete all items
   ItemCtrl.clearAllItems();
   StorageCtrl.clearItemsFromStorage();
   setMyThings([]);

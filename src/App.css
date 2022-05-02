@@ -3,11 +3,21 @@
   max-width: 100%;
 }
 
+body {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 main {
   width: 70%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Begin header section */
 #header-styling {
   display: flex;
   flex-direction: row;
@@ -15,10 +25,18 @@ main {
   align-items: center;
 }
 
-#header-button {
-  font-size: 1.2rem;
+h1 {
+  font-size: 2.5rem;
+  font-weight: normal;
 }
 
+#header-button {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+/* End Header section */
+
+/* Begin Add Meal Form section */
 form {
   border: 1px solid gray;
   padding: 3%;
@@ -34,6 +52,11 @@ form {
   flex-direction: column;
 }
 
+.add-meal-form-h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
 .all-form-items {
   display: flex;
   justify-content: space-between;
@@ -47,29 +70,37 @@ form {
   width: 45%;
 }
 
-#submit-button {
+#add-meal-submit-button {
   margin-top: 2%;
   margin-bottom: 2%;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
+/* End Add Meal Form section */
 
-h3 {
+/* Begin TotalCalories section */
+.total-calories-h3 {
   text-align: center;
   font-size: 2.92rem;
-  margin-top: 2%;
+  margin-top: 3%;
+  font-weight: 400;
 }
+/* End TotalCalories section */
 
-ul {
+/* Begin MealDisplayContainer/SingleMeal section */
+.meal-display-container {
   padding: 0;
 }
 
-li {
+.single-meal-display-item {
   list-style-type: none;
   border: 1px solid blue;
-  padding: 0.75% 1%;
+  padding: 0.55% 1%;
   margin: 1%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1rem;
 }
 
 .single-meal-edit-form {
@@ -93,4 +124,29 @@ li {
 .single-meal-edit-form-btns-container {
   display: flex;
   justify-content: center;
+}
+
+/* End MealDisplayContainer/SingleMeal section */
+
+/* Begin responsive design stuff */
+@media only screen and (max-width: 860px) {
+  main {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #header-styling {
+    flex-direction: column;
+  }
+  #add-meal-form {
+    margin-top: 130px;
+  }
+  .single-meal-edit-form {
+    flex-direction: column;
+  }
+
+  .single-meal-display-item {
+    flex-direction: column;
+  }
 }

@@ -17,7 +17,11 @@ const TotalCalories = () => {
     totalCalories += item.calories;
   });
 
-  return <h3 data-testid="total-calories">Total Calories: {totalCalories} </h3>;
+  return (
+    <h3 data-testid="total-calories-h3" className="total-calories-h3">
+      Total Calories: {totalCalories}
+    </h3>
+  );
 };
 
 export default TotalCalories;
