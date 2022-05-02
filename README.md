@@ -65,14 +65,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## `COMPONENT STRUCTURE`
 
 <App>
-- <MealsProvider> global state management
-- - <Header/>
-- - <AddMealForm/> add meal to list
-- - <TotalCalories/>
-- - <MealDisplayContainer>
-- - - <SingleMeal/> (as many meals as needed)
-- - <MealDisplayContainer/>
-- <MealsProvider/>
+-<MealsProvider> global state management
+--<Header/>
+--<AddMealForm/> add meal to list
+--<TotalCalories/>
+--<MealDisplayContainer>
+---<SingleMeal/> (as many meals as needed)
+--<MealDisplayContainer/>
+-<MealsProvider/>
 <App/>
 
 ## `FILE BREAKDOWN`
