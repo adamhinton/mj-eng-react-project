@@ -128,7 +128,9 @@ const editForm = (
       />
 
       <div className="single-meal-edit-form-btns-container">
-        <Button type="submit">Submit</Button>
+        <Button type="submit" data-testid="edit-singlemeal-submit">
+          Submit
+        </Button>
         <Button
           onClick={() => {
             setIsEditMode(false);
