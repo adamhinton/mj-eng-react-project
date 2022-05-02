@@ -97,8 +97,15 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### `Header.js: <Header/>`
 
--Title (Calorie Counter)
+-h1 Title (Calorie Counter)
 -Clear All Button:
 .Deletes all meal items from localStorage and from Context global state, resetting meals display
 .uses clearAllitemsClick()
 -Imports AppBar component from MUI
+
+### `AddMealForm`
+
+-Allows user to add a single meal object (name and calorie count) to display
+-imports the following from MUI: Paper for forms, TextField for inputs, Button for buttons
+-Holds formValues in component state while user is filling out form, then resets formValues on submit
+-Passes formValues to global state on submit
