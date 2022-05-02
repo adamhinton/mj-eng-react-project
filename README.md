@@ -103,9 +103,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 .uses clearAllitemsClick()
 -Imports AppBar component from MUI
 
-### `AddMealForm`
+### `AddMealForm.js: <AddMealForm/>`
 
 -Allows user to add a single meal object (name and calorie count) to display
 -imports the following from MUI: Paper for forms, TextField for inputs, Button for buttons
 -Holds formValues in component state while user is filling out form, then resets formValues on submit
 -Passes formValues to global state on submit
+
+### `TotalCalories.js: <TotalCalories/>`
+
+-Takes meal list from Context global state and calculates total calories amount for display
+-Dynamically updates every time total calorie count changes (When a meal(s) is deleted, updated, or added)
