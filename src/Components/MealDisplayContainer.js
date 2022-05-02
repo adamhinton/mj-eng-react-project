@@ -5,12 +5,12 @@ import ThingsContext from "../Context/MyContext";
 import { useContext } from "react";
 
 const MealDisplayContainer = () => {
-  // myThings is the array of all meals, taken from context
-  const { myThings } = useContext(ThingsContext);
+  // mealsListGlobalState is the array of all meals, taken from context
+  const { mealsListGlobalState } = useContext(ThingsContext);
 
   return (
     <ul className="meal-display-container">
-      {myThings.map((item) => {
+      {mealsListGlobalState.map((item) => {
         const { name, calories, id } = item;
         return <SingleMeal name={name} calories={calories} id={id} key={id} />;
       })}

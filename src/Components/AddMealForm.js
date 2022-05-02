@@ -13,8 +13,8 @@ import StorageCtrl from "../CrudFunctions/StorageCtrl";
 import ItemCtrl from "../CrudFunctions/ItemCtrl";
 
 export default function AddMealForm() {
-  //setMyThings lets user update meal list in context
-  const { setMyThings } = useContext(ThingsContext);
+  //setmealsListGlobalState lets user update meal list in context
+  const { setmealsListGlobalState } = useContext(ThingsContext);
 
   const [formValues, setFormValues] = useState({ name: "", calories: 0 });
 
@@ -84,7 +84,7 @@ export default function AddMealForm() {
             StorageCtrl.storeMeal(newMeal);
           }
 
-          setMyThings(StorageCtrl.getMealsFromStorage());
+          setmealsListGlobalState(StorageCtrl.getMealsFromStorage());
           setFormValues({ name: "", calories: 0 });
         }}
       >

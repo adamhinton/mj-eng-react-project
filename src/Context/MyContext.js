@@ -13,10 +13,12 @@ export const ThingsProvider = ({ children }) => {
   // "Things" is the list of meals
   const things = StorageCtrl.getMealsFromStorage();
   //allows components to edit and view list of meals
-  const [myThings, setMyThings] = useState(things);
+  const [mealsListGlobalState, setmealsListGlobalState] = useState(things);
 
   return (
-    <ThingsContext.Provider value={{ myThings, setMyThings }}>
+    <ThingsContext.Provider
+      value={{ mealsListGlobalState, setmealsListGlobalState }}
+    >
       {children}
     </ThingsContext.Provider>
   );
