@@ -49,7 +49,7 @@ const StorageCtrl = (function () {
     },
 
     deleteMealFromStorage: function (id) {
-      let meals = JSON.parse(localStorage.getMeal("meals"));
+      let meals = JSON.parse(localStorage.getItem("meals"));
 
       meals.forEach(function (meal, index) {
         if (id === meal.id) {
