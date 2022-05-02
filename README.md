@@ -17,6 +17,7 @@ All user-inputted meals info is stored in localStorage
 
 UNIT TESTING:
 Used Jest unit testing library:
+https://jestjs.io/docs/getting-started
 
 PLANNING:
 COMPONENTS:
