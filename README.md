@@ -81,14 +81,14 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## `COMPONENT STRUCTURE`
 
 <App>
-- <ThingsProvider> global state management
+- <MealsProvider> global state management
 - - <Header/>
 - - <AddMealForm/> add meal to list
 - - <TotalCalories/>
 - - <MealDisplayContainer>
 - - - <SingleMeal/> (as many meals as needed)
 - - <MealDisplayContainer/>
-- <ThingsProvider/>
+- <MealsProvider/>
 <App/>
 
 ## `FILE BREAKDOWN`
@@ -108,12 +108,12 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 -Standard React App component. Houses all the other components
 
-### `MyContext.js: <ThingsProvider/>`
+### `MyContext.js: <MealsProvider/>`
 
 -Provides global state management via Context API (https://reactjs.org/docs/context.html)
 -Specifically, holds the persisted list of meals to display
 -Has variables setmealsListGlobalState (to change list of meals) and mealsListGlobalState (the actual array of meal objects)
--All components nested within ThingsProvider have access to this data now
+-All components nested within MealsProvider have access to this data now
 
 ### `Header.js: <Header/>`
 
