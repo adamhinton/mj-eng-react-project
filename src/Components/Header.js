@@ -15,7 +15,7 @@ const Header = () => {
     <AppBar id="header-styling" data-testid="appBar">
       <h1 data-testid="header-h1">Calorie Counter</h1>
       <Button
-        id="header-button"
+        id="header-clearall-button"
         variant="contained"
         data-testid="clear-all-btn"
         onClick={() => {
