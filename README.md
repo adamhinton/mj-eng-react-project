@@ -64,16 +64,16 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## `COMPONENT STRUCTURE`
 
-<App>
-  <MealsProvider> global state management
-    <Header/>
-    <AddMealForm/> add meal to list
-    <TotalCalories/>
-    <MealDisplayContainer>
-      <SingleMeal/> (as many meals as needed)
-    <MealDisplayContainer/>
-  <MealsProvider/>
-<App/>
+App.js
+  MealsProvider.js : global state management
+    Header.js
+    AddMealForm.js : add meal to list
+    TotalCalories.js
+    MealDisplayContainer.js
+      SingleMeal.js:  (as many meals as needed)
+    MealDisplayContainer
+  MealsProvider/> 
+App.js
 
 ## `FILE BREAKDOWN`
 
