@@ -1,3 +1,9 @@
+# `APPLICATION OVERVIEW:`
+
+-This application displays meals (name and calorie count) in digestible chunks
+-Has full CRUD functionality, allowing user to update, delete, read and add meals
+-Displays total calories of all meals
+
 PLANNING:
 COMPONENTS:
 []Header
