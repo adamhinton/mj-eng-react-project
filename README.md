@@ -100,3 +100,5 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 -Title (Calorie Counter)
 -Clear All Button:
 .Deletes all meal items from localStorage and from Context global state, resetting meals display
+.uses clearAllitemsClick()
+-Imports AppBar component from MUI
