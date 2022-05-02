@@ -71,8 +71,8 @@ App.js
 -		TotalCalories.js
 -		MealDisplayContainer.js
 -			SingleMeal.js:  (as many meals as needed)
--		MealDisplayContainer
--	MealsProvider
+-		MealDisplayContainer.js
+-  MealsProvider.js
 -App.js
 
 ## `FILE BREAKDOWN`
