@@ -34,8 +34,8 @@ test("[3] Calories input and label appear on screen", () => {
     </MealsProvider>
   );
 
-  const caloriesLabel = screen.getByTestId("calories-label");
-  const caloriesInput = screen.getByTestId("calories-input");
+  const caloriesLabel = screen.getByTestId("add-new-meal-calories-label");
+  const caloriesInput = screen.getByTestId("add-new-meal-calories-input");
 
   expect(caloriesLabel).toBeVisible();
   expect(caloriesInput).toBeVisible();

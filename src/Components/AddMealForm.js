@@ -50,11 +50,14 @@ export default function AddMealForm() {
           </div>
 
           <div className="form-item-container">
-            <FormLabel data-testid="calories-label" htmlFor="calorie-calories">
+            <FormLabel
+              data-testid="add-new-meal-calories-label"
+              htmlFor="calorie-calories"
+            >
               Calories
             </FormLabel>
             <TextField
-              data-testid="calories-input"
+              data-testid="add-new-meal-calories-input"
               placeholder="Add Calories"
               type="number"
               name="calorie-calories"
