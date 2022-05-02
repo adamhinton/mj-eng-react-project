@@ -10,7 +10,7 @@ const TotalCalories = () => {
 
   //For some reason, the total calories finder function from ItemCtrl.js didn't work right. Either I was using it wrong or it was buggy.
   //So I wrote my own here.
-  const currentData = StorageCtrl.getItemsFromStorage();
+  const currentData = StorageCtrl.getMealsFromStorage();
   let totalCalories = 0;
 
   currentData.forEach((item) => {

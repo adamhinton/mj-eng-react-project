@@ -47,7 +47,7 @@ const SingleMeal = (props) => {
             {/* Delete selected item */}
             <Button
               onClick={() => {
-                deleteSingleItemClick(id, setMyThings);
+                deleteSingleMealClick(id, setMyThings);
               }}
             >
               <DeleteIcon />
@@ -72,14 +72,14 @@ export default SingleMeal;
 
 //edit current item
 const updateCurrentMeal = (newMealObject, setMyThings) => {
-  StorageCtrl.updateItemStorage(newMealObject);
-  setMyThings(StorageCtrl.getItemsFromStorage());
+  StorageCtrl.updateMealStorage(newMealObject);
+  setMyThings(StorageCtrl.getMealsFromStorage());
 };
 
 //Delete selected item
-const deleteSingleItemClick = (id, setMyThings) => {
-  StorageCtrl.deleteItemFromStorage(id);
-  const newContext = StorageCtrl.getItemsFromStorage();
+const deleteSingleMealClick = (id, setMyThings) => {
+  StorageCtrl.deleteMealFromStorage(id);
+  const newContext = StorageCtrl.getMealsFromStorage();
   setMyThings(newContext);
 };
 

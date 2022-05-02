@@ -33,7 +33,7 @@ export default Header;
 
 const clearAllItemsClick = (setMyThings) => {
   //delete all items
-  ItemCtrl.clearAllItems();
-  StorageCtrl.clearItemsFromStorage();
+  ItemCtrl.clearAllMeals();
+  StorageCtrl.clearMealsFromStorage();
   setMyThings([]);
 };

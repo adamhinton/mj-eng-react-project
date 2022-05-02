@@ -77,14 +77,14 @@ export default function AddMealForm() {
         onClick={(e) => {
           e.preventDefault();
           const input = formValues;
-          const newItem = ItemCtrl.addItem(input.name, input.calories);
+          const newMeal = ItemCtrl.addMeal(input.name, input.calories);
 
           //now to store item in localStorage
           if (input.name !== "" && input.calories !== "") {
-            StorageCtrl.storeItem(newItem);
+            StorageCtrl.storeMeal(newMeal);
           }
 
-          setMyThings(StorageCtrl.getItemsFromStorage());
+          setMyThings(StorageCtrl.getMealsFromStorage());
           setFormValues({ name: "", calories: 0 });
         }}
       >
