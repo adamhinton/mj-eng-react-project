@@ -114,3 +114,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 -Takes meal list from Context global state and calculates total calories amount for display
 -Dynamically updates every time total calorie count changes (When a meal(s) is deleted, updated, or added)
+
+### `MealDisplayContainer.js: <MealDisplayContainer/>`
+
+-Takes meal list from Context global state and maps over it, producing a <SingleMeal/> for each
+-The idea is to display the list of meals in a digestible manner
+-Passes meal name, id and calorie count in as props to SingleMeal
