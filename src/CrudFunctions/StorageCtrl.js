@@ -2,66 +2,66 @@
 const StorageCtrl = (function () {
   // Public methods
   return {
-    storeItem: function (item) {
-      let items;
+    storeMeal: function (meal) {
+      let meals;
 
-      // Check if any items in localStorage
-      if (localStorage.getItem("items") === null) {
-        // no items in localStorage
-        items = [];
-        // Push new item
-        items.push(item);
+      // Check if any meals in localStorage
+      if (localStorage.getItem("meals") === null) {
+        // no meals in localStorage
+        meals = [];
+        // Push new meal
+        meals.push(meal);
         // Set localStorage
-        localStorage.setItem("items", JSON.stringify(items));
+        localStorage.setItem("meals", JSON.stringify(meals));
       } else {
         // Get what is already in localStorage
-        items = JSON.parse(localStorage.getItem("items"));
-        // Push new item
-        items.push(item);
+        meals = JSON.parse(localStorage.getItem("meals"));
+        // Push new meal
+        meals.push(meal);
         // Reset localStorage
-        localStorage.setItem("items", JSON.stringify(items));
+        localStorage.setItem("meals", JSON.stringify(meals));
       }
     },
 
-    getItemsFromStorage: function () {
-      let items;
+    getMealsFromStorage: function () {
+      let meals;
 
-      if (localStorage.getItem("items") === null) {
+      if (localStorage.getItem("meals") === null) {
         // Nothing in localStorage
-        items = [];
+        meals = [];
       } else {
-        items = JSON.parse(localStorage.getItem("items"));
+        meals = JSON.parse(localStorage.getItem("meals"));
       }
 
-      return items;
+      return meals;
     },
 
-    updateItemStorage: function (updatedItem) {
-      let items = JSON.parse(localStorage.getItem("items"));
+    updateMealStorage: function (updatedMeal) {
+      let meals = JSON.parse(localStorage.getItem("meals"));
 
-      items.forEach(function (item, index) {
-        if (updatedItem.id === item.id) {
-          items.splice(index, 1, updatedItem);
+      meals.forEach(function (meal, index) {
+        if (updatedMeal.id === meal.id) {
+          meals.splice(index, 1, updatedMeal);
         }
       });
 
-      localStorage.setItem("items", JSON.stringify(items));
+      localStorage.setItem("meals", JSON.stringify(meals));
     },
 
-    deleteItemFromStorage: function (id) {
-      let items = JSON.parse(localStorage.getItem("items"));
+    deleteMealFromStorage: function (id) {
+      let meals = JSON.parse(localStorage.getMeal("meals"));
 
-      items.forEach(function (item, index) {
-        if (id === item.id) {
-          items.splice(index, 1);
+      meals.forEach(function (meal, index) {
+        if (id === meal.id) {
+          meals.splice(index, 1);
         }
       });
 
-      localStorage.setItem("items", JSON.stringify(items));
+      localStorage.setItem("meals", JSON.stringify(meals));
     },
 
-    clearItemsFromStorage: function () {
-      localStorage.removeItem("items");
+    clearMealsFromStorage: function () {
+      localStorage.removeItem("meals");
     },
   };
 })();

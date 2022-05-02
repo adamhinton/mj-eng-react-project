@@ -10,8 +10,8 @@ import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 const SingleMeal = (props) => {
-  //setMyThings updates context with the edited meal. Used for editing.
-  const { setMyThings } = useContext(ThingsContext);
+  //setmealsListGlobalState updates context with the edited meal. Used for editing.
+  const { setmealsListGlobalState } = useContext(ThingsContext);
   const { name, calories, id } = props;
   //isEditMode is toggled when user clicks edit button
   const [isEditMode, setIsEditMode] = useState(false);
@@ -47,7 +47,7 @@ const SingleMeal = (props) => {
             {/* Delete selected item */}
             <Button
               onClick={() => {
-                deleteSingleItemClick(id, setMyThings);
+                deleteSingleMealClick(id, setmealsListGlobalState);
               }}
             >
               <DeleteIcon />
@@ -60,7 +60,7 @@ const SingleMeal = (props) => {
         editForm(
           formValues,
           setFormValues,
-          setMyThings,
+          setmealsListGlobalState,
           calories,
           setIsEditMode
         )}
@@ -71,23 +71,23 @@ const SingleMeal = (props) => {
 export default SingleMeal;
 
 //edit current item
-const updateCurrentMeal = (newMealObject, setMyThings) => {
-  StorageCtrl.updateItemStorage(newMealObject);
-  setMyThings(StorageCtrl.getItemsFromStorage());
+const updateCurrentMeal = (newMealObject, setmealsListGlobalState) => {
+  StorageCtrl.updateMealStorage(newMealObject);
+  setmealsListGlobalState(StorageCtrl.getMealsFromStorage());
 };
 
 //Delete selected item
-const deleteSingleItemClick = (id, setMyThings) => {
-  StorageCtrl.deleteItemFromStorage(id);
-  const newContext = StorageCtrl.getItemsFromStorage();
-  setMyThings(newContext);
+const deleteSingleMealClick = (id, setmealsListGlobalState) => {
+  StorageCtrl.deleteMealFromStorage(id);
+  const newContext = StorageCtrl.getMealsFromStorage();
+  setmealsListGlobalState(newContext);
 };
 
 //this is the edit form, I put it down here to keep things more readable. Only shows up after clicking edit button
 const editForm = (
   formValues,
   setFormValues,
-  setMyThings,
+  setmealsListGlobalState,
   calories,
   setIsEditMode
 ) => {
@@ -97,7 +97,7 @@ const editForm = (
       data-testid="single-meal-edit-form"
       onSubmit={(e) => {
         e.preventDefault();
-        updateCurrentMeal(formValues, setMyThings);
+        updateCurrentMeal(formValues, setmealsListGlobalState);
         setIsEditMode(false);
       }}
     >

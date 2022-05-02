@@ -8,8 +8,8 @@ import { useContext } from "react";
 import ThingsContext from "../Context/MyContext";
 
 const Header = () => {
-  //setMyThings lets user update context (meals list)
-  const { setMyThings } = useContext(ThingsContext);
+  //setmealsListGlobalState lets user update context (meals list)
+  const { setmealsListGlobalState } = useContext(ThingsContext);
 
   return (
     <AppBar id="header-styling" data-testid="appBar">
@@ -20,7 +20,7 @@ const Header = () => {
         data-testid="clear-all-btn"
         onClick={() => {
           //delete all items
-          clearAllItemsClick(setMyThings);
+          clearAllItemsClick(setmealsListGlobalState);
         }}
       >
         Clear All
@@ -31,9 +31,9 @@ const Header = () => {
 
 export default Header;
 
-const clearAllItemsClick = (setMyThings) => {
+const clearAllItemsClick = (setmealsListGlobalState) => {
   //delete all items
-  ItemCtrl.clearAllItems();
-  StorageCtrl.clearItemsFromStorage();
-  setMyThings([]);
+  ItemCtrl.clearAllMeals();
+  StorageCtrl.clearMealsFromStorage();
+  setmealsListGlobalState([]);
 };

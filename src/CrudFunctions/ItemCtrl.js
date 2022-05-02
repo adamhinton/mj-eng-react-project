@@ -1,8 +1,8 @@
 import StorageCtrl from "./StorageCtrl";
 
-const ItemCtrl = (function () {
-  // Item Constructor
-  const Item = function (id, name, calories) {
+const mealCtrl = (function () {
+  // meal Constructor
+  const meal = function (id, name, calories) {
     this.id = id;
     this.name = name;
     this.calories = calories;
@@ -10,21 +10,21 @@ const ItemCtrl = (function () {
 
   // Data Structure / State
   const data = {
-    items: StorageCtrl.getItemsFromStorage(),
-    currentItem: null,
+    meals: StorageCtrl.getMealsFromStorage(),
+    currentMeal: null,
     totalCalories: 0,
   };
 
   // Public methods
   return {
-    getItems: function () {
-      return data.items;
+    getMeals: function () {
+      return data.meals;
     },
-    addItem: function (name, calories) {
+    addMeal: function (name, calories) {
       let ID;
       // Create ID
-      if (data.items.length > 0) {
-        ID = data.items[data.items.length - 1].id + 1;
+      if (data.meals.length > 0) {
+        ID = data.meals[data.meals.length - 1].id + 1;
       } else {
         ID = 0;
       }
@@ -32,67 +32,67 @@ const ItemCtrl = (function () {
       // Calories to number
       calories = parseInt(calories);
 
-      // Create new item
+      // Create new meal
       //added a Let before this line (AD)
-      let newItem = new Item(ID, name, calories);
+      let newMeal = new meal(ID, name, calories);
 
-      // Add to items array
-      data.items.push(newItem);
+      // Add to meals array
+      data.meals.push(newMeal);
 
-      return newItem;
+      return newMeal;
     },
-    getItemById: function (id) {
+    getMealById: function (id) {
       let found = null;
-      // Loop through items
-      data.items.forEach(function (item) {
-        if (item.id === id) {
-          found = item;
+      // Loop through meals
+      data.meals.forEach(function (meal) {
+        if (meal.id === id) {
+          found = meal;
         }
       });
       return found;
     },
-    updateItem: function (name, calories, id) {
+    updateMeal: function (name, calories, id) {
       // Calories to number
       calories = parseInt(calories);
 
       let found = null;
 
-      data.items.forEach(function (item) {
-        if (item.id === id) {
-          item.name = name;
-          item.calories = calories;
-          found = item;
+      data.meals.forEach(function (meal) {
+        if (meal.id === id) {
+          meal.name = name;
+          meal.calories = calories;
+          found = meal;
         }
       });
       return found;
     },
-    deleteItem: function (id) {
+    deleteMeal: function (id) {
       // Get ids
-      const ids = data.items.map(function (item) {
-        return item.id;
+      const ids = data.meals.map(function (meal) {
+        return meal.id;
       });
 
       // Get index
       const index = ids.indexOf(id);
 
-      // Remove item
-      data.items.splice(index, 1);
+      // Remove meal
+      data.meals.splice(index, 1);
     },
-    clearAllItems: function () {
-      data.items = [];
+    clearAllMeals: function () {
+      data.meals = [];
     },
-    setCurrentItem: function (item) {
-      data.currentItem = item;
+    setCurrentMeal: function (meal) {
+      data.currentmeal = meal;
     },
-    getCurrentItem: function () {
-      return data.currentItem;
+    getCurrentMeal: function () {
+      return data.currentMeal;
     },
     getTotalCalories: function () {
       let total = 0;
 
-      // Loop through items and add cals
-      data.items.forEach(function (item) {
-        total += item.calories;
+      // Loop through meals and add cals
+      data.meals.forEach(function (meal) {
+        total += meal.calories;
       });
 
       // Set total cal in data structure
@@ -107,4 +107,4 @@ const ItemCtrl = (function () {
   };
 })();
 
-export default ItemCtrl;
+export default mealCtrl;
