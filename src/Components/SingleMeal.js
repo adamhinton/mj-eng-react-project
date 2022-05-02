@@ -102,7 +102,7 @@ const editForm = (
       }}
     >
       <TextField
-        data-testid="editmeal-input"
+        data-testid="edit-meal-name-input"
         placeholder={formValues.name}
         type="text"
         name="meal-name"
