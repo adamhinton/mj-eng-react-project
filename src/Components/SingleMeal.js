@@ -28,8 +28,10 @@ const SingleMeal = (props) => {
       {!isEditMode && (
         <>
           <div>
-            <strong>{name}:</strong>
-            <em> {calories} Calories</em>
+            <strong data-testid="singlemeal-name-display">{name}:</strong>
+            <em data-testid="singlemeal-calories-display">
+              {calories} Calories
+            </em>
           </div>
           <div className="meal-display-button-container">
             {/* Edit selected item */}
