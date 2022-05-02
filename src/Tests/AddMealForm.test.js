@@ -20,8 +20,8 @@ test("[2] Meal input and label appear on screen", () => {
     </MealsProvider>
   );
 
-  const mealLabel = screen.getByTestId("meal-label");
-  const mealInput = screen.getByTestId("meal-input");
+  const mealLabel = screen.getByTestId("add-new-meal-name-label");
+  const mealInput = screen.getByTestId("add-new-meal-name-input");
 
   expect(mealLabel).toBeVisible();
   expect(mealInput).toBeVisible();

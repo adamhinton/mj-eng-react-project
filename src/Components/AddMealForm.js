@@ -28,14 +28,14 @@ export default function AddMealForm() {
         <section className="all-form-items">
           <div className="form-item-container">
             <FormLabel
-              data-testid="meal-label"
+              data-testid="add-new-meal-name-label"
               htmlFor="meal-name"
               name="meal-name"
             >
               Meal
             </FormLabel>
             <TextField
-              data-testid="meal-input"
+              data-testid="add-new-meal-name-input"
               placeholder="Add Item"
               type="text"
               name="meal-name"
