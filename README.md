@@ -62,19 +62,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 # APP DOCUMENTATION:
 
-## `COMPONENT STRUCTURE`
-
-App.js
--	MealsProvider.js : global state management
--		Header.js
--		AddMealForm.js : add meal to list
--		TotalCalories.js
--		MealDisplayContainer.js
--			SingleMeal.js:  (as many meals as needed)
--		MealDisplayContainer.js
--  MealsProvider.js
--App.js
-
 ## `FILE BREAKDOWN`
 
 ### `ItemCtrl.js`
