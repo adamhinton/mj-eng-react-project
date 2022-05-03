@@ -66,62 +66,62 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### `ItemCtrl.js`
 
--Works in tandem with StorageCtrl.js
--Has various functions for seeing, creating, updating and deleting meal items
+-Works in tandem with StorageCtrl.js\
+-Has various functions for seeing, creating, updating and deleting meal items\
 -These are imported in to various files in the app
 
 ### `StorageCtrl.js`
 
--Works in tandem with ItemCtrl.js
+-Works in tandem with ItemCtrl.js\
 -Has various functions for storing, getting, updating and deleting individual meals, or all meals, from localStorage
 
 ### `App.js: <App/>`
 
--Standard React App component. Houses all the other components
+-Standard React App component. Houses all the other components\
 
 ### `MyContext.js: <MealsProvider/>`
 
--Provides global state management via Context API (https://reactjs.org/docs/context.html)
--Specifically, holds the persisted list of meals to display
--Has variables setmealsListGlobalState (to change list of meals) and mealsListGlobalState (the actual array of meal objects)
--All components nested within MealsProvider have access to this data now
+-Provides global state management via Context API (https://reactjs.org/docs/context.html)\
+-Specifically, holds the persisted list of meals to display\
+-Has variables setmealsListGlobalState (to change list of meals) and mealsListGlobalState (the actual array of meal objects)\
+-All components nested within MealsProvider have access to this data now\
 
 ### `Header.js: <Header/>`
 
--h1 Title (Calorie Counter)
--Clear All Button:
-.Deletes all meal items from localStorage and from Context global state, resetting meals display
-.uses clearAllitemsClick()
+-h1 Title (Calorie Counter)\
+-Clear All Button:\
+.Deletes all meal items from localStorage and from Context global state, resetting meals display\
+.uses clearAllitemsClick()\
 -Imports AppBar component from MUI
 
 ### `AddMealForm.js: <AddMealForm/>`
 
--Allows user to add a single meal object (name and calorie count) to display
--imports the following from MUI: Paper for forms, TextField for inputs, Button for buttons
--Holds formValues in component state while user is filling out form, then resets formValues on submit
+-Allows user to add a single meal object (name and calorie count) to display\
+-imports the following from MUI: Paper for forms, TextField for inputs, Button for buttons\
+-Holds formValues in component state while user is filling out form, then resets formValues on submit\
 -Passes formValues to global state on submit
 
 ### `TotalCalories.js: <TotalCalories/>`
 
--Takes meal list from Context global state and calculates total calories amount for display
--Dynamically updates every time total calorie count changes (When a meal(s) is deleted, updated, or added)
+-Takes meal list from Context global state and calculates total calories amount for display\
+-Dynamically updates every time total calorie count changes (When a meal(s) is deleted, updated, or added)\
 
 ### `MealDisplayContainer.js: <MealDisplayContainer/>`
 
--Takes meal list from Context global state and maps over it, producing a <SingleMeal/> for each
--The idea is to display the list of meals in a digestible manner
--Passes meal name, id and calorie count in as props to SingleMeal
+-Takes meal list from Context global state and maps over it, producing a <SingleMeal/> for each\
+-The idea is to display the list of meals in a digestible manner\
+-Passes meal name, id and calorie count in as props to SingleMeal\
 
 ### `SingleMeal.js: <SingleMeal/>`
 
--Imports EditIcon, Button and TextField from MUI for component usage
--Displays a single meal that was inputted by user (name and calorie count)
+-Imports EditIcon, Button and TextField from MUI for component usage\
+-Displays a single meal that was inputted by user (name and calorie count)\
 -Takes the name, id and calorie count of meal in as props from MealDisplayContainer.js
 -Trash button to delete item
 
-EDIT FUNCTIONALITY of SingleMeal:
--Edit button to pull up edit form:
-.User toggles edit mode by hitting edit button (saved in state as boolean: isEditMode, setIsEditMode)
-.User can change name and calorie count of meal in edit form
-.User submits or cancels their edit, then component reverts back to default display mode
--function generateSingleMealEditForm is called when edit button is hit, then displays the edit form
+EDIT FUNCTIONALITY of SingleMeal:\
+-Edit button to pull up edit form:\
+.User toggles edit mode by hitting edit button (saved in state as boolean: isEditMode, setIsEditMode)\
+.User can change name and calorie count of meal in edit form\
+.User submits or cancels their edit, then component reverts back to default display mode\
+-function generateSingleMealEditForm is called when edit button is hit, then displays the edit form\
