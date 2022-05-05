@@ -84,7 +84,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 -Provides global state management via Context API (https://reactjs.org/docs/context.html)\
 -Specifically, holds the persisted list of meals to display\
 -Has variables setmealsListGlobalState (to change list of meals) and mealsListGlobalState (the actual array of meal objects)\
--All components nested within MealsProvider have access to this data now\
+-All components nested within MealsProvider have access to this data now
 
 ### `Header.js: <Header/>`
 
@@ -104,19 +104,19 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ### `TotalCalories.js: <TotalCalories/>`
 
 -Takes meal list from Context global state and calculates total calories amount for display\
--Dynamically updates every time total calorie count changes (When a meal(s) is deleted, updated, or added)\
+-Dynamically updates every time total calorie count changes (When a meal(s) is deleted, updated, or added)
 
 ### `MealDisplayContainer.js: <MealDisplayContainer/>`
 
 -Takes meal list from Context global state and maps over it, producing a <SingleMeal/> for each\
 -The idea is to display the list of meals in a digestible manner\
--Passes meal name, id and calorie count in as props to SingleMeal\
+-Passes meal name, id and calorie count in as props to SingleMeal
 
 ### `SingleMeal.js: <SingleMeal/>`
 
 -Imports EditIcon, Button and TextField from MUI for component usage\
 -Displays a single meal that was inputted by user (name and calorie count)\
--Takes the name, id and calorie count of meal in as props from MealDisplayContainer.js
+-Takes the name, id and calorie count of meal in as props from MealDisplayContainer.js\
 -Trash button to delete item
 
 EDIT FUNCTIONALITY of SingleMeal:\
@@ -124,4 +124,4 @@ EDIT FUNCTIONALITY of SingleMeal:\
 .User toggles edit mode by hitting edit button (saved in state as boolean: isEditMode, setIsEditMode)\
 .User can change name and calorie count of meal in edit form\
 .User submits or cancels their edit, then component reverts back to default display mode\
--function generateSingleMealEditForm is called when edit button is hit, then displays the edit form\
+-function generateSingleMealEditForm is called when edit button is hit, then displays the edit form
