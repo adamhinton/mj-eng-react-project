@@ -1,7 +1,7 @@
 # `APPLICATION OVERVIEW:`
 
--This application displays meals (name and calorie count) in digestible chunks
--Has full CRUD functionality, allowing user to update, delete, read and add meals
+-This application displays meals (name and calorie count) in digestible chunks\
+-Has full CRUD functionality, allowing user to update, delete, read and add meals\
 -Displays total calories of all meals
 
 # `TECHNOLOGIES USED:`
@@ -77,7 +77,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### `App.js: <App/>`
 
--Standard React App component. Houses all the other components\
+-Standard React App component. Houses all the other components
 
 ### `MyContext.js: <MealsProvider/>`
 
