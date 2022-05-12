@@ -56,12 +56,14 @@ const SingleMeal = (props) => {
         </>
       )}
       {/* When edit mode IS selected, this edit form displays */}
+
       {isEditMode &&
         generateSingleMealEditForm(
           formValues,
           setFormValues,
           setmealsListGlobalState,
           calories,
+          name,
           setIsEditMode
         )}
     </li>
@@ -89,6 +91,7 @@ const generateSingleMealEditForm = (
   setFormValues,
   setmealsListGlobalState,
   calories,
+  name,
   setIsEditMode
 ) => {
   return (
@@ -103,7 +106,7 @@ const generateSingleMealEditForm = (
     >
       <TextField
         data-testid="edit-meal-name-input"
-        placeholder={formValues.name}
+        placeholder={name}
         type="text"
         name="meal-name"
         value={formValues.name}
