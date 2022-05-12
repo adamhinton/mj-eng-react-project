@@ -3,8 +3,6 @@ import { render, screen } from "@testing-library/react";
 import { MealsProvider } from "../Context/MyContext";
 import userEvent from "@testing-library/user-event";
 
-//I couldn't get these to work with a Provider component.ping for now.
-
 test("[1] Renders without errors", () => {
   render(
     <MealsProvider>
